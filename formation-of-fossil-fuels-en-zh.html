@@ -1,0 +1,1859 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fossil Fuels (EN/中文)</title>
+<meta name="description" content="IGCSE Environmental Management 0680: a step-by-step walk-through of how coal, oil and natural gas formed, with check questions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: a guided reading page. Section chips across the top; each section is the notes (with a diagram) followed by a check card that must be passed before moving on. */
+:root {
+  --bg: #edf2f1; --surface: #ffffff; --sunk: #f5f8f7; --ink: #14262b; --muted: #56696e; --line: #d2dedc;
+  --accent: #1c6676; --accent-ink: #ffffff; --accent-soft: #dcedf0;
+  --good: #1f7449; --good-bg: #e2f2e8; --bad: #b1372e; --bad-bg: #fbe8e5; --hint: #8d600c; --hint-bg: #fbf0d9;
+  --enz: #c9dfe4; --sky: #e3f0f6; --water: #b7d7e6; --plant: #4d8a46; --trunk: #7a5a3a; --peat: #9a6a43; --lignite: #6f4c30; --bitum: #3d3a37; --coal: #1f1f1f; --sand: #ead59f; --mud: #b3a58e; --shale: #8a949a; --rock: #d4cbbb; --src: #6d7479; --oil: #3f3121; --oilband: #d9a55a; --gas: #ef9a9a; --plk: #2f8f5b; --enz-line: #1c6676; --sub: #5aa469; --sub-end: #2c6a3a; --inh: #d9534f; --comp: #c0392b; --nonc: #2b5fb8;
+  --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0e191c; --surface: #162428; --sunk: #12201f; --ink: #e2eceb; --muted: #9bb0b2; --line: #2a3e42;
+    --accent: #63b8c8; --accent-ink: #08181b; --accent-soft: #1b3940;
+    --good: #72d09d; --good-bg: #163226; --bad: #f08d81; --bad-bg: #3b201c; --hint: #e6b85e; --hint-bg: #352a13;
+    --enz: #23474f; --sky: #1a2a31; --water: #1f4a5c; --plant: #6fae66; --trunk: #a07a52; --peat: #9c6c47; --lignite: #7d583a; --bitum: #55514d; --coal: #0b0b0b; --sand: #8e7a48; --mud: #6a6052; --shale: #56616a; --rock: #3e3a34; --src: #39424a; --oil: #c58a3c; --oilband: #9a6e33; --gas: #b85c5c; --plk: #7fd3a3; --enz-line: #63b8c8; --sub: #6cc07c; --sub-end: #b5e8bf; --inh: #f07b72; --comp: #f07b72; --nonc: #7fa8f0;
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 17px; line-height: 1.6; padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+[hidden] { display: none !important; }
+.wrap { max-width: 860px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 20px 56px; display: flex; flex-direction: column; gap: 16px; }
+h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height: 1.15; margin: 0; text-wrap: balance; }
+h1 { font-size: clamp(26px, 4vw, 34px); letter-spacing: -.01em; }
+h2 { font-size: clamp(22px, 3vw, 27px); }
+h4 { font-size: 17px; }
+p { margin: 0; }
+.eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 22px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+@media (max-width: 520px) { .card { padding: 15px; } body { font-size: 16px; } }
+
+/* Section chips */
+.chips { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 2px; scrollbar-width: thin; }
+.chips button { flex: 0 0 auto; font: inherit; font-size: 13px; color: var(--muted); background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 5px 12px 5px 6px; cursor: pointer; display: flex; gap: 6px; align-items: center; white-space: nowrap; }
+.chips button .n { font-family: var(--font-mono); font-size: 11px; width: 20px; height: 20px; border-radius: 50%; display: grid; place-items: center; background: var(--sunk); border: 1px solid var(--line); }
+.chips button.done .n { background: var(--good); color: var(--surface); border-color: var(--good); }
+.chips button[aria-current="step"] { color: var(--accent-ink); background: var(--accent); border-color: var(--accent); }
+.chips button[aria-current="step"] .n { background: var(--accent-ink); color: var(--accent); border-color: var(--accent-ink); }
+.chips button:disabled { opacity: .5; cursor: not-allowed; }
+button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+/* Notes */
+.notes { display: flex; flex-direction: column; gap: 12px; max-width: 70ch; }
+.notes b { font-weight: 700; }
+ul.bonds { margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 2px; }
+.two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+@media (max-width: 620px) { .two { grid-template-columns: minmax(0, 1fr); } }
+.tile { background: var(--sunk); border: 1px solid var(--line); border-radius: 8px; padding: 14px; display: flex; flex-direction: column; gap: 8px; }
+.tile.comp h4 { color: var(--comp); } .tile.nonc h4 { color: var(--nonc); }
+.note { font-size: 14px; color: var(--muted); }
+
+/* Figures */
+.fig { margin: 0; display: flex; flex-direction: column; gap: 8px; align-items: stretch; max-width: 100%; }
+.fig svg { width: 100%; max-width: 640px; height: auto; display: block; margin: 0 auto; }
+
+.fig figcaption { font-size: 14px; color: var(--muted); text-align: center; }
+.enz { fill: var(--enz); stroke: var(--enz-line); stroke-width: 2; }
+.sub { fill: var(--sub); }
+.sub-end { fill: var(--sub-end); }
+.inh { fill: var(--inh); }
+.figbg { fill: var(--surface); }
+.panel { fill: var(--sunk); stroke: var(--line); }
+.lbl { fill: var(--ink); font-family: var(--font-body); font-size: 14px; }
+.small-t { font-size: 12px; }
+.inh-t { fill: var(--inh); font-weight: 700; }
+.cap { fill: var(--muted); font-family: var(--font-body); font-size: 14px; }
+.lead { stroke: var(--muted); stroke-width: 1; }
+.bad-mark line { stroke: var(--bad); stroke-width: 3.5; stroke-linecap: round; }
+.good-mark { fill: none; stroke: var(--good); stroke-width: 3.5; stroke-linecap: round; stroke-linejoin: round; }
+.arrow { stroke: var(--muted); stroke-width: 2; }
+.arrow-head { fill: var(--muted); }
+.cone { fill: var(--good); opacity: .35; stroke: var(--good); stroke-width: 1; }
+.axis { stroke: var(--ink); stroke-width: 1.6; }
+.grid { stroke: var(--line); stroke-width: 1; }
+.dash { stroke: var(--muted); stroke-width: 1.4; stroke-dasharray: 6 5; }
+.guide { fill: none; stroke-width: 1.3; stroke-dasharray: 4 4; }
+.num { fill: var(--muted); font-family: var(--font-mono); font-size: 12px; }
+.axis-t { fill: var(--ink); font-family: var(--font-body); font-size: 14px; }
+.curve .line { fill: none; stroke-width: 3; }
+.curve-t { font-weight: 700; font-size: 14px; }
+.c-normal .line { stroke: var(--ink); } .c-normal .guide { stroke: var(--ink); } .c-normal .curve-t { fill: var(--ink); }
+.c-comp .line { stroke: var(--comp); } .c-comp .guide { stroke: var(--comp); } .c-comp .curve-t { fill: var(--comp); }
+.c-nonc .line { stroke: var(--nonc); } .c-nonc .guide { stroke: var(--nonc); } .c-nonc .curve-t { fill: var(--nonc); }
+#inhib-fig .curve.off { display: none; }
+.toggles { display: flex; gap: 8px; flex-wrap: wrap; }
+.tog { font: inherit; font-size: 14px; color: var(--ink); background: var(--surface); border: 1.5px solid var(--line); border-radius: 999px; padding: 6px 12px; cursor: pointer; }
+.tog.on { border-color: var(--accent); background: var(--accent-soft); font-weight: 700; }
+.tog { display: inline-flex; align-items: center; gap: 8px; }
+.tog .sw { width: 18px; height: 4px; border-radius: 2px; display: inline-block; opacity: .35; }
+.tog.on .sw { opacity: 1; }
+.sw-normal { background: var(--ink); } .sw-comp { background: var(--comp); } .sw-nonc { background: var(--nonc); }
+.tog:disabled { cursor: default; }
+.sat-caps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; font-size: 13px; color: var(--muted); }
+.sat-caps b { color: var(--ink); }
+@media (max-width: 560px) { .sat-caps { grid-template-columns: minmax(0, 1fr); } }
+
+
+.sub { color: var(--muted); margin-top: 6px; font-size: 15px; }
+ul.pts, ol.steps { margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 6px; }
+.examtip { background: var(--hint-bg); border-radius: 8px; padding: 10px 14px; font-size: 15px; }
+.examtip b { color: var(--hint); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; justify-content: center; font-size: 14px; }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.sq { width: 16px; height: 12px; border-radius: 2px; display: inline-block; border: 1px solid var(--line); }
+.sq.peat { background: var(--peat); } .sq.sand { background: var(--sand); } .sq.mud { background: var(--mud); } .sq.coal { background: var(--coal); }
+.sq.plk { background: var(--plk); } .sq.shale { background: var(--shale); } .sq.oil { background: var(--oil); }
+.sky { fill: var(--sky); } .water { fill: var(--water); } .peat { fill: var(--peat); } .lignite { fill: var(--lignite); } .bitum { fill: var(--bitum); } .coal { fill: var(--coal); }
+.sand { fill: var(--sand); } .mud { fill: var(--mud); } .shale { fill: var(--shale); } .rock { fill: var(--rock); } .src { fill: var(--src); } .oil { fill: var(--oil); } .gas { fill: var(--gas); } .plk { fill: var(--plk); }
+.trunk { fill: var(--trunk); } .frond { fill: none; stroke: var(--plant); stroke-width: 5; stroke-linecap: round; }
+.frame { fill: none; stroke: var(--muted); stroke-width: 1.2; }
+.track { fill: var(--sunk); stroke: var(--line); }
+.dot { fill: var(--muted); } .dotfill { fill: var(--ink); opacity: .35; }
+.lbl.b, .cap.b, .num.b { font-weight: 700; } .num.b { fill: var(--ink); font-size: 13px; }
+.flow line, .flow path { fill: none; stroke: var(--muted); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.flow.big line, .flow.big path { stroke-width: 3; }
+.flow.mig line, .flow.mig path, .flowkey { stroke: var(--bad); stroke-width: 2.5; stroke-dasharray: 6 4; fill: none; }
+.flow.mig path { stroke-dasharray: none; }
+.band-cool { fill: var(--sunk); } .band-oil { fill: var(--oilband); opacity: .45; } .band-gas { fill: var(--gas); opacity: .45; }
+.ground { stroke: var(--ink); stroke-width: 2; } .rig { fill: none; stroke: var(--ink); stroke-width: 2.5; stroke-linejoin: round; } .well { stroke: var(--ink); stroke-width: 2.5; }
+.src3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+@media (max-width: 620px) { .src3 { grid-template-columns: minmax(0, 1fr); } }
+.src3 .tile { border-top: 4px solid var(--line); } .src3 .ff-coal { border-top-color: var(--bitum); } .src3 .ff-oil { border-top-color: var(--oil); } .src3 .ff-gas { border-top-color: var(--gas); }
+.st8 { font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+.chain { display: flex; flex-wrap: wrap; gap: 6px; align-items: stretch; justify-content: center; }
+.chain > i { font-style: normal; align-self: center; color: var(--muted); font-size: 20px; font-weight: 700; }
+.chain > i::before { content: "→"; }
+.part { flex: 1 1 100px; min-width: 0; background: var(--sunk); border: 1px solid var(--line); border-radius: 8px; padding: 10px; display: flex; flex-direction: column; gap: 4px; font-size: 14px; text-align: center; }
+.part.out { border-color: var(--accent); }
+@media (max-width: 700px) { .chain { flex-direction: column; } .chain .part { flex: none; } .chain > i::before { content: "↓"; } }
+.tblwrap { overflow-x: auto; }
+.rank { display: flex; flex-direction: column; gap: 10px; }
+.rk { display: grid; grid-template-columns: minmax(120px, 190px) minmax(0, 1fr) 52px; gap: 12px; align-items: center; }
+.rk-n { display: flex; flex-direction: column; font-size: 15px; } .rk-n span { font-size: 13px; color: var(--muted); }
+.rk-bar { height: 26px; background: var(--sunk); border: 1px solid var(--line); border-radius: 5px; overflow: hidden; } .rk-bar i { display: block; height: 100%; }
+.rk-v { font-family: var(--font-mono); font-size: 14px; text-align: right; }
+@media (max-width: 560px) { .rk { grid-template-columns: minmax(0, 1fr) 52px; gap: 4px 10px; } .rk-n { grid-column: 1 / -1; } }
+.rk-note { font-size: 13px; color: var(--muted); text-align: center; margin: 0; }
+.bg-peat { background: var(--peat); } .bg-lignite { background: var(--lignite); } .bg-bitum { background: var(--bitum); } .bg-coal { background: var(--coal); }
+.mk { fill: var(--surface); stroke: var(--ink); stroke-width: 2; } .fig svg .mkn { fill: var(--ink); font-family: var(--font-mono); font-size: 16px; font-weight: 700; }
+ol.key { margin: 0 auto; padding-left: 26px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 20px; font-size: 14px; max-width: 640px; }
+@media (max-width: 560px) { ol.key { grid-template-columns: minmax(0, 1fr); } }
+ol.key li.nk { list-style: none; margin-left: -20px; display: flex; align-items: center; gap: 8px; color: var(--muted); }
+.mig { width: 26px; border-top: 2.5px dashed var(--bad); display: inline-block; }
+table.st { border-collapse: collapse; width: 100%; font-size: 15px; color: var(--ink); }
+table.st th, table.st td { padding: 7px 10px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+table.st thead th { font-size: 13px; color: var(--muted); }
+table.st tbody th { font-size: 14px; color: var(--muted); font-weight: 600; white-space: nowrap; }
+.zh, .zhi { font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", "Noto Sans CJK SC", "Source Han Sans SC", sans-serif; }
+.zh { display: block; color: var(--muted); font-size: .93em; margin-top: 2px; line-height: 1.55; font-weight: 400; }
+.zhi { color: var(--muted); font-weight: 500; font-size: .7em; margin-left: 8px; white-space: nowrap; }
+h1 .zhi { display: block; margin: 4px 0 0; font-size: .6em; }
+h2 .zhi { display: inline-block; }
+body.no-zh .zh, body.no-zh .zhi, body.no-zh .zhc { display: none !important; }
+.stem .zh { font-weight: 500; font-size: .85em; }
+.opt .zh { font-size: .88em; }
+.msg .zh { margin-top: 4px; }
+.part .zh { font-size: 12.5px; }
+.figzh { text-align: center; font-size: 13.5px; }
+.tools { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin-top: 10px; }
+.tools .note { font-size: 13px; }
+.tog { font: inherit; font-size: 14px; color: var(--ink); background: var(--surface); border: 1.5px solid var(--accent); border-radius: 999px; padding: 5px 14px; cursor: pointer; }
+.listen { align-self: flex-start; font: inherit; font-size: 14px; color: var(--accent); background: var(--accent-soft); border: 0; border-radius: 999px; padding: 6px 14px; cursor: pointer; }
+.listen.on { background: var(--accent); color: var(--accent-ink); }
+.say { font-size: 15px; line-height: 1; background: none; border: 1px solid var(--line); border-radius: 6px; padding: 3px 5px; cursor: pointer; vertical-align: 2px; }
+.gloss { border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; display: flex; flex-direction: column; gap: 8px; background: var(--sunk); }
+.gloss h3 { font-size: 17px; }
+.gloss table.st td { font-size: 14.5px; }
+.gloss .zhc { font-size: 15.5px; white-space: nowrap; }
+.model { border-left: 4px solid var(--accent); padding: 4px 0 4px 14px; display: flex; flex-direction: column; gap: 8px; }
+.model h3 { font-size: 17px; }
+@media (max-width: 560px) {
+  .gloss thead { display: none; }
+  .gloss table.st, .gloss tbody, .gloss tr, .gloss td { display: block; width: 100%; }
+  .gloss tr { padding: 8px 0; border-bottom: 1px solid var(--line); }
+  .gloss table.st td { border: 0; padding: 1px 4px; }
+  .gloss td.zhc { display: inline-block; width: auto; }
+  .gloss td:first-child { display: inline-block; width: auto; }
+}
+
+/* Check card */
+.check { border-top: 4px solid var(--accent); }
+.qhead { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; }
+.stage { font-family: var(--font-mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; padding: 4px 10px; border-radius: 6px; background: var(--accent-soft); color: var(--accent); }
+.stage.backup { background: var(--hint-bg); color: var(--hint); }
+.stage.retry { background: var(--accent); color: var(--accent-ink); }
+.trail { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-family: var(--font-mono); font-size: 11px; color: var(--muted); }
+.trail b { font-weight: 500; padding: 2px 7px; border-radius: 5px; border: 1px solid var(--line); }
+.trail b.done { background: var(--sunk); border-color: transparent; text-decoration: line-through; }
+.trail b.on { border-color: var(--hint); color: var(--hint); }
+.stem { font-size: 18px; font-weight: 700; max-width: 66ch; }
+.opts { display: flex; flex-direction: column; gap: 8px; }
+.opt { display: grid; grid-template-columns: 32px minmax(0, 1fr) auto; gap: 12px; align-items: center; width: 100%; text-align: left; font: inherit; color: var(--ink); background: var(--surface); border: 1.5px solid var(--line); border-radius: 8px; padding: 10px 12px; cursor: pointer; }
+.opt:hover:not(:disabled) { border-color: var(--accent); background: var(--accent-soft); }
+.opt:disabled { cursor: default; }
+.opt .k { width: 30px; height: 30px; border-radius: 6px; display: grid; place-items: center; font-family: var(--font-mono); background: var(--sunk); border: 1px solid var(--line); }
+.opt .mark { font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: .05em; }
+.opt.right { border-color: var(--good); background: var(--good-bg); } .opt.right .k { background: var(--good); color: var(--surface); border-color: var(--good); } .opt.right .mark { color: var(--good); }
+.opt.wrong { border-color: var(--bad); background: var(--bad-bg); } .opt.wrong .k { background: var(--bad); color: var(--surface); border-color: var(--bad); } .opt.wrong .mark { color: var(--bad); }
+.opt.dim { opacity: .55; }
+.log { display: flex; flex-direction: column; gap: 8px; }
+.msg { border-radius: 8px; padding: 11px 14px; }
+.msg h3 { font-family: var(--font-body); font-size: 15px; margin: 0 0 3px; }
+.msg.good { background: var(--good-bg); } .msg.good h3 { color: var(--good); }
+.msg.bad { background: var(--bad-bg); } .msg.bad h3 { color: var(--bad); }
+.msg.hint { background: var(--hint-bg); } .msg.hint h3 { color: var(--hint); }
+.btn { font: inherit; font-weight: 700; border: 0; border-radius: 8px; padding: 11px 20px; cursor: pointer; background: var(--accent); color: var(--accent-ink); }
+.btn.ghost { background: transparent; color: var(--accent); border: 1.5px solid var(--accent); }
+.btn:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
+.actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.passed { display: flex; flex-direction: column; gap: 6px; }
+.passed div { display: flex; gap: 10px; align-items: baseline; font-size: 15px; }
+.tag { font-family: var(--font-mono); font-size: 11px; letter-spacing: .05em; text-transform: uppercase; padding: 2px 7px; border-radius: 5px; white-space: nowrap; }
+.tag.first { background: var(--good-bg); color: var(--good); } .tag.help { background: var(--hint-bg); color: var(--hint); } .tag.miss { background: var(--bad-bg); color: var(--bad); }
+.big { font-family: var(--font-display); font-weight: 700; font-size: clamp(40px, 7vw, 56px); line-height: 1; font-variant-numeric: tabular-nums; }
+.big small { font-size: .45em; color: var(--muted); font-weight: 500; }
+.secs { display: flex; flex-direction: column; gap: 8px; }
+.secs .row { display: flex; gap: 10px; align-items: center; justify-content: space-between; flex-wrap: wrap; border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; }
+.linkbtn { font: inherit; font-size: 14px; color: var(--accent); background: none; border: 0; padding: 0; text-decoration: underline; cursor: pointer; }
+ol.keys { margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 6px; }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+@media (max-width: 600px) {
+  .fig svg .lbl, .fig svg .cap, .fig svg .axis-t { font-size: 21px; }
+  .fig svg .curve-t { font-size: 20px; }
+  .fig svg .num { font-size: 17px; }
+  .fig svg .small-t { font-size: 18px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">IGCSE Environmental Management 0680 · Year 10 · 1.4.1</div>
+    <h1>How fossil fuels formed <span class="zhi">化石燃料是怎样形成的</span></h1>
+    <p class="sub">Coal, petroleum (oil) and natural gas · 煤、石油和天然气</p>
+    <div class="tools"><button type="button" class="tog" id="zhtog" aria-pressed="true">中文 Chinese: <b>ON</b></button><span class="note">Turn Chinese off to practise your English. 关闭中文，练习英语。</span></div>
+  </header>
+  <nav class="chips" id="chips" aria-label="Sections"></nav>
+  <main id="main" style="display:flex;flex-direction:column;gap:16px"></main>
+</div>
+<script>
+/* ===== Walk-through content (bilingual EN/中文): formation of fossil fuels, IGCSE 0680 ===== */
+const SECTIONS = [
+ {
+  "id": "s1",
+  "title": "What is a fossil fuel?",
+  "tz": "什么是化石燃料？",
+  "teach": "<button type=\"button\" class=\"listen\" data-listen>🔊 Listen (English)</button>\n<p>A <b>fossil fuel</b> is a fuel. It formed from <b>dead organisms</b> (living things) from <b>millions of years ago</b>.<span class=\"zh\"><b>化石燃料</b>是一种燃料。它由<b>数百万年前</b>的<b>死亡生物</b>形成。</span></p>\n<p>The organisms got energy from the Sun. Plants and algae used <b>photosynthesis</b>. The energy was stored in their bodies.<span class=\"zh\">这些生物从太阳获得能量。植物和藻类通过<b>光合作用</b>获得能量。能量储存在它们的身体里。</span></p>\n<p>When we burn a fossil fuel, we release this <b>stored energy</b>.<span class=\"zh\">当我们燃烧化石燃料时，就释放出这些<b>储存的能量</b>。</span></p>\n<p>There are three fossil fuels:<span class=\"zh\">化石燃料有三种：</span></p>\n{{FIG:three}}\n<p>Fossil fuels are <b>non-renewable</b>. They take millions of years to form. When we use them up, we cannot replace them.<span class=\"zh\">化石燃料是<b>不可再生的</b>。它们需要数百万年才能形成。用完以后，我们无法再补充。</span></p>\n<div class=\"gloss\"><h3>Key words <span class=\"zhi\">关键词</span></h3><div class=\"tblwrap\"><table class=\"st\"><thead><tr><th>English</th><th>中文</th><th>Meaning</th></tr></thead><tbody><tr><td><button type=\"button\" class=\"say\" data-say=\"fossil fuel\" aria-label=\"Listen to fossil fuel\">🔊</button> <b>fossil fuel</b></td><td class=\"zhc\">化石燃料</td><td>a fuel made from organisms that died millions of years ago</td></tr><tr><td><button type=\"button\" class=\"say\" data-say=\"organism\" aria-label=\"Listen to organism\">🔊</button> <b>organism</b></td><td class=\"zhc\">生物</td><td>a living thing</td></tr><tr><td><button type=\"button\" class=\"say\" data-say=\"photosynthesis\" aria-label=\"Listen to photosynthesis\">🔊</button> <b>photosynthesis</b></td><td class=\"zhc\">光合作用</td><td>plants use light to make food</td></tr><tr><td><button type=\"button\" class=\"say\" data-say=\"non-renewable\" aria-label=\"Listen to non-renewable\">🔊</button> <b>non-renewable</b></td><td class=\"zhc\">不可再生的</td><td>it will run out; we cannot replace it</td></tr><tr><td><button type=\"button\" class=\"say\" data-say=\"methane\" aria-label=\"Listen to methane\">🔊</button> <b>methane</b></td><td class=\"zhc\">甲烷</td><td>the main gas in natural gas</td></tr></tbody></table></div></div>\n",
+  "checks": [
+   {
+    "q": "What is a fossil fuel?",
+    "qz": "什么是化石燃料？",
+    "o": [
+     "A fuel made from organisms that died long ago",
+     "A fuel made when rocks melt deep underground",
+     "A fuel made by bacteria in rubbish today",
+     "A fuel made from trees we cut down today"
+    ],
+    "oz": [
+     "由很久以前死亡的生物形成的燃料",
+     "岩石在地下深处熔化时形成的燃料",
+     "今天细菌在垃圾中产生的燃料",
+     "用今天砍下的树木制成的燃料"
+    ],
+    "a": 0,
+    "w": {
+     "1": "Fossil fuels come from living things, not melted rock.",
+     "2": "That is biogas. It forms in weeks, not millions of years.",
+     "3": "Wood is not a fossil fuel. Fossil fuels formed millions of years ago."
+    },
+    "wz": {
+     "1": "化石燃料来自生物，不是熔化的岩石。",
+     "2": "那是沼气。它几周就能形成，不需要数百万年。",
+     "3": "木材不是化石燃料。化石燃料在数百万年前形成。"
+    },
+    "x": "Coal, oil and natural gas formed from organisms that died millions of years ago.",
+    "xz": "煤、石油和天然气都由数百万年前死亡的生物形成。",
+    "b": [
+     {
+      "q": "Where did the carbon in fossil fuels come from?",
+      "qz": "化石燃料中的碳来自哪里？",
+      "o": [
+       "Living things",
+       "Lava from volcanoes",
+       "Sea salt",
+       "Metal"
+      ],
+      "oz": [
+       "生物",
+       "火山的熔岩",
+       "海盐",
+       "金属"
+      ],
+      "a": 0,
+      "x": "The carbon was once part of living things.",
+      "xz": "这些碳曾经是生物身体的一部分。"
+     },
+     {
+      "q": "When did these organisms live?",
+      "qz": "这些生物生活在什么时候？",
+      "o": [
+       "In the last 50 years",
+       "A few hundred years ago",
+       "A few thousand years ago",
+       "Millions of years ago"
+      ],
+      "oz": [
+       "最近50年",
+       "几百年前",
+       "几千年前",
+       "数百万年前"
+      ],
+      "a": 3,
+      "x": "They lived millions of years ago.",
+      "xz": "它们生活在数百万年前。",
+      "fixed": true
+     }
+    ],
+    "id": "c1"
+   },
+   {
+    "q": "Why are fossil fuels non-renewable?",
+    "qz": "为什么化石燃料是不可再生的？",
+    "o": [
+     "They take millions of years to form",
+     "We can only burn them one time",
+     "They are only in a few countries",
+     "They make carbon dioxide when burned"
+    ],
+    "oz": [
+     "它们需要数百万年才能形成",
+     "它们只能燃烧一次",
+     "只有少数国家有它们",
+     "燃烧时会产生二氧化碳"
+    ],
+    "a": 0,
+    "w": {
+     "1": "All fuels burn only one time, also wood. But wood is renewable.",
+     "2": "Where they are found does not matter.",
+     "3": "This is a problem, but it is not why they are non-renewable."
+    },
+    "wz": {
+     "1": "所有燃料都只能燃烧一次，木材也是。但木材是可再生的。",
+     "2": "在哪里发现它们并不重要。",
+     "3": "这是一个问题，但不是它们不可再生的原因。"
+    },
+    "x": "They take millions of years to form. We use them much faster, so they will run out.",
+    "xz": "它们需要数百万年才能形成。我们用得快得多，所以它们会用完。",
+    "b": [
+     {
+      "q": "'Non-renewable' means…",
+      "qz": "“不可再生”的意思是……",
+      "o": [
+       "it will run out",
+       "it comes from the Sun",
+       "it is found underground",
+       "it is a liquid"
+      ],
+      "oz": [
+       "它会用完",
+       "它来自太阳",
+       "它在地下被发现",
+       "它是液体"
+      ],
+      "a": 0,
+      "x": "Non-renewable: it runs out and we cannot replace it.",
+      "xz": "不可再生：它会用完，而且我们无法补充。"
+     },
+     {
+      "q": "Which is renewable?",
+      "qz": "哪一个是可再生的？",
+      "o": [
+       "Wind",
+       "Coal",
+       "Crude oil",
+       "Natural gas"
+      ],
+      "oz": [
+       "风能",
+       "煤",
+       "原油",
+       "天然气"
+      ],
+      "a": 0,
+      "x": "Wind will not run out. Coal, oil and gas are fossil fuels.",
+      "xz": "风不会用完。煤、石油和天然气是化石燃料。"
+     }
+    ],
+    "id": "c2"
+   }
+  ]
+ },
+ {
+  "id": "s2",
+  "title": "The recipe for a fossil fuel",
+  "tz": "化石燃料形成的共同步骤",
+  "teach": "<button type=\"button\" class=\"listen\" data-listen>🔊 Listen (English)</button>\n<p>Normally, when a living thing dies, <b>decomposers</b> (bacteria and fungi) break it down. They need <b>oxygen</b>. The carbon goes into the air as carbon dioxide.<span class=\"zh\">通常，生物死后，<b>分解者</b>（细菌和真菌）会把它分解。分解者需要<b>氧气</b>。碳以二氧化碳的形式进入空气。</span></p>\n<p>A fossil fuel forms only when this decay <b>stops</b>. All three fuels form in the same way:<span class=\"zh\">只有当分解<b>停止</b>时，才会形成化石燃料。三种燃料的形成方式相同：</span></p>\n<ol class=\"steps\">\n<li>Many organisms <b>die</b>.<span class=\"zh\">大量生物<b>死亡</b>。</span></li>\n<li><b>Sediment</b> (mud or sand) <b>buries</b> them quickly.<span class=\"zh\"><b>沉积物</b>（泥或沙）很快把它们<b>掩埋</b>。</span></li>\n<li>There is <b>no oxygen</b>. Decomposers cannot work well. Decay is <b>incomplete</b>.<span class=\"zh\">这里<b>没有氧气</b>。分解者不能很好地工作。分解是<b>不完全的</b>。</span></li>\n<li>More layers build up on top. Deeper down, the <b>pressure</b> and <b>temperature</b> are higher.<span class=\"zh\">上面堆积了更多层。越深，<b>压力</b>和<b>温度</b>越高。</span></li>\n<li>After <b>millions of years</b>, heat and pressure change the remains into coal, oil or gas.<span class=\"zh\">经过<b>数百万年</b>，热和压力把遗骸变成煤、石油或天然气。</span></li>\n</ol>\n{{FIG:recipe}}\n<p class=\"examtip\"><b>Key words for the exam:</b> buried by sediment · no oxygen (anaerobic) · incomplete decay · heat and pressure · millions of years<span class=\"zh\"><b>考试关键词：</b>被沉积物掩埋 · 没有氧气（无氧）· 不完全分解 · 热和压力 · 数百万年</span></p>\n<div class=\"gloss\"><h3>Key words <span class=\"zhi\">关键词</span></h3><div class=\"tblwrap\"><table class=\"st\"><thead><tr><th>English</th><th>中文</th><th>Meaning</th></tr></thead><tbody><tr><td><button type=\"button\" class=\"say\" data-say=\"decomposer\" aria-label=\"Listen to decomposer\">🔊</button> <b>decomposer</b></td><td class=\"zhc\">分解者</td><td>bacteria and fungi that break down dead things</td></tr><tr><td><button type=\"button\" class=\"say\" data-say=\"decay / decompose\" aria-label=\"Listen to decay / decompose\">🔊</button> <b>decay / decompose</b></td><td class=\"zhc\">腐烂 / 分解</td><td>to break down a dead body</td></tr><tr><td><button type=\"button\" class=\"say\" data-say=\"sediment\" aria-label=\"Listen to sediment\">🔊</button> <b>sediment</b></td><td class=\"zhc\">沉积物</td><td>sand, mud and small pieces of rock</td></tr><tr><td><button type=\"button\" class=\"say\" data-say=\"buried\" aria-label=\"Listen to buried\">🔊</button> <b>buried</b></td><td class=\"zhc\">被掩埋</td><td>covered, under the ground</td></tr><tr><td><button type=\"button\" class=\"say\" data-say=\"anaerobic\" aria-label=\"Listen to anaerobic\">🔊</button> <b>anaerobic</b></td><td class=\"zhc\">无氧的</td><td>with no oxygen</td></tr><tr><td><button type=\"button\" class=\"say\" data-say=\"pressure\" aria-label=\"Listen to pressure\">🔊</button> <b>pressure</b></td><td class=\"zhc\">压力</td><td>a pushing force</td></tr><tr><td><button type=\"button\" class=\"say\" data-say=\"incomplete\" aria-label=\"Listen to incomplete\">🔊</button> <b>incomplete</b></td><td class=\"zhc\">不完全的</td><td>not finished</td></tr></tbody></table></div></div>\n",
+  "checks": [
+   {
+    "q": "Why did the dead organisms not rot away completely?",
+    "qz": "为什么死亡的生物没有完全腐烂？",
+    "o": [
+     "Too little oxygen for decomposers",
+     "Cold water froze the bodies solid",
+     "The bodies had no carbon in them",
+     "Decomposers did not exist at that time"
+    ],
+    "oz": [
+     "氧气太少，分解者无法工作",
+     "冰冷的水把尸体冻住了",
+     "尸体里没有碳",
+     "那时候还没有分解者"
+    ],
+    "a": 0,
+    "w": {
+     "1": "Most fossil fuels formed in warm places. The reason is no oxygen.",
+     "2": "The bodies had lots of carbon. That is where the fuel comes from.",
+     "3": "Bacteria are very old. They were there, but without oxygen they could not finish."
+    },
+    "wz": {
+     "1": "大多数化石燃料在温暖的地方形成。原因是没有氧气。",
+     "2": "尸体里有很多碳。燃料就来自这些碳。",
+     "3": "细菌非常古老。它们存在，但没有氧气就无法完成分解。"
+    },
+    "x": "Sediment and water covered the bodies. There was no oxygen, so decomposers could not finish.",
+    "xz": "沉积物和水覆盖了尸体。没有氧气，所以分解者无法完成分解。",
+    "b": [
+     {
+      "q": "What do decomposers do?",
+      "qz": "分解者做什么？",
+      "o": [
+       "Break down dead things",
+       "Make coal from plants",
+       "Stop things from rotting",
+       "Make oxygen in the mud"
+      ],
+      "oz": [
+       "分解死去的生物",
+       "用植物制造煤",
+       "阻止东西腐烂",
+       "在泥里制造氧气"
+      ],
+      "a": 0,
+      "x": "Decomposers (bacteria and fungi) break down dead things.",
+      "xz": "分解者（细菌和真菌）分解死去的生物。"
+     },
+     {
+      "q": "What does 'anaerobic' mean?",
+      "qz": "“无氧的”是什么意思？",
+      "o": [
+       "Without oxygen",
+       "Without water",
+       "Without sunlight",
+       "Without heat"
+      ],
+      "oz": [
+       "没有氧气",
+       "没有水",
+       "没有阳光",
+       "没有热"
+      ],
+      "a": 0,
+      "x": "Anaerobic = without oxygen.",
+      "xz": "无氧 = 没有氧气。"
+     }
+    ],
+    "id": "c3"
+   },
+   {
+    "q": "What is the correct order?",
+    "qz": "正确的顺序是什么？",
+    "o": [
+     "Die → buried by sediment → heat and pressure → fuel",
+     "Die → decay completely → buried → fuel",
+     "Die → heat and pressure → buried → fuel",
+     "Buried by sediment → die → heat and pressure → fuel"
+    ],
+    "oz": [
+     "死亡 → 被沉积物掩埋 → 热和压力 → 燃料",
+     "死亡 → 完全分解 → 被掩埋 → 燃料",
+     "死亡 → 热和压力 → 被掩埋 → 燃料",
+     "被沉积物掩埋 → 死亡 → 热和压力 → 燃料"
+    ],
+    "a": 0,
+    "w": {
+     "1": "If they decay completely, the carbon goes into the air. Nothing is left.",
+     "2": "Heat and pressure come from being buried deep. Burial comes first.",
+     "3": "The organisms die first. Then sediment covers them."
+    },
+    "wz": {
+     "1": "如果完全分解，碳会进入空气，什么都不会留下。",
+     "2": "热和压力来自深埋。所以先被掩埋。",
+     "3": "生物先死亡，然后沉积物覆盖它们。"
+    },
+    "x": "They die, sediment buries them, then heat and pressure change them over millions of years.",
+    "xz": "它们死亡，被沉积物掩埋，然后热和压力在数百万年中改变它们。",
+    "b": [
+     {
+      "q": "What makes the high pressure?",
+      "qz": "是什么造成了高压？",
+      "o": [
+       "The weight of the layers on top",
+       "Tree roots pushing down into the soil",
+       "Gas from decomposers",
+       "Waves in the sea"
+      ],
+      "oz": [
+       "上面各层的重量",
+       "树根向下压进土壤",
+       "分解者产生的气体",
+       "海里的波浪"
+      ],
+      "a": 0,
+      "x": "Every new layer adds more weight on top.",
+      "xz": "每一层新的沉积物都增加了上面的重量。"
+     },
+     {
+      "q": "Why is it hotter deeper underground?",
+      "qz": "为什么地下越深越热？",
+      "o": [
+       "The Earth is hotter deeper down",
+       "The Sun heats the deep rock",
+       "Decomposers make a lot of heat",
+       "The sea boils the rock"
+      ],
+      "oz": [
+       "地球越深的地方越热",
+       "太阳加热深处的岩石",
+       "分解者产生大量热量",
+       "海水把岩石煮沸"
+      ],
+      "a": 0,
+      "x": "The deeper you go into the Earth, the hotter it is.",
+      "xz": "越往地球深处，温度越高。"
+     }
+    ],
+    "id": "c4"
+   }
+  ]
+ },
+ {
+  "id": "s3",
+  "title": "Coal 1: swamps and peat",
+  "tz": "煤（一）：沼泽和泥炭",
+  "teach": "<button type=\"button\" class=\"listen\" data-listen>🔊 Listen (English)</button>\n<p>Coal formed from <b>plants</b>: big tree ferns and other trees. They grew in <b>swamp forests</b>. The land was warm, wet and low.<span class=\"zh\">煤由<b>植物</b>形成：巨大的树蕨和其他树木。它们生长在<b>沼泽森林</b>里。那里温暖、潮湿、地势低。</span></p>\n<p>Most coal formed about <b>300 million years ago</b>. This time is called the <b>Carboniferous period</b>.<span class=\"zh\">大部分煤形成于大约<b>3亿年前</b>。这个时期叫做<b>石炭纪</b>。</span></p>\n<p>The plants died and fell into the swamp water. The ground was <b>waterlogged</b> (full of water). There was very little oxygen, so the plants only <b>partly</b> decayed.<span class=\"zh\">植物死后倒进沼泽的水里。地面<b>积满了水</b>。那里氧气很少，所以植物只是<b>部分</b>分解。</span></p>\n<p>Layers of dead plants built up. They made a soft, brown material called <b>peat</b>. Peat is the <b>first stage</b> of coal.<span class=\"zh\">一层层死去的植物堆积起来，形成一种柔软的褐色物质，叫做<b>泥炭</b>。泥炭是煤形成的<b>第一阶段</b>。</span></p>\n{{FIG:swamp}}\n<div class=\"gloss\"><h3>Key words <span class=\"zhi\">关键词</span></h3><div class=\"tblwrap\"><table class=\"st\"><thead><tr><th>English</th><th>中文</th><th>Meaning</th></tr></thead><tbody><tr><td><button type=\"button\" class=\"say\" data-say=\"swamp\" aria-label=\"Listen to swamp\">🔊</button> <b>swamp</b></td><td class=\"zhc\">沼泽</td><td>wet land with trees and still water</td></tr><tr><td><button type=\"button\" class=\"say\" data-say=\"waterlogged\" aria-label=\"Listen to waterlogged\">🔊</button> <b>waterlogged</b></td><td class=\"zhc\">积水的</td><td>full of water</td></tr><tr><td><button type=\"button\" class=\"say\" data-say=\"tree fern\" aria-label=\"Listen to tree fern\">🔊</button> <b>tree fern</b></td><td class=\"zhc\">树蕨</td><td>a big fern plant like a tree</td></tr><tr><td><button type=\"button\" class=\"say\" data-say=\"peat\" aria-label=\"Listen to peat\">🔊</button> <b>peat</b></td><td class=\"zhc\">泥炭</td><td>soft brown material from part-decayed plants</td></tr><tr><td><button type=\"button\" class=\"say\" data-say=\"partly\" aria-label=\"Listen to partly\">🔊</button> <b>partly</b></td><td class=\"zhc\">部分地</td><td>not all</td></tr><tr><td><button type=\"button\" class=\"say\" data-say=\"Carboniferous period\" aria-label=\"Listen to Carboniferous period\">🔊</button> <b>Carboniferous period</b></td><td class=\"zhc\">石炭纪</td><td>a time about 360–300 million years ago</td></tr></tbody></table></div></div>\n",
+  "checks": [
+   {
+    "q": "Coal formed mostly from…",
+    "qz": "煤主要由什么形成？",
+    "o": [
+     "plants in swamp forests",
+     "fish in warm, shallow seas",
+     "plankton in the open sea",
+     "dinosaurs in deserts"
+    ],
+    "oz": [
+     "沼泽森林里的植物",
+     "温暖浅海里的鱼",
+     "大海里的浮游生物",
+     "沙漠里的恐龙"
+    ],
+    "a": 0,
+    "w": {
+     "1": "Sea animals helped make oil and gas, not coal.",
+     "2": "Plankton made oil and gas. Coal is from land plants.",
+     "3": "This is a myth. Coal is from plants."
+    },
+    "wz": {
+     "1": "海洋动物帮助形成石油和天然气，不是煤。",
+     "2": "浮游生物形成石油和天然气。煤来自陆地植物。",
+     "3": "这是一个误解。煤来自植物。"
+    },
+    "x": "Coal formed from trees and plants in swamp forests.",
+    "xz": "煤由沼泽森林里的树木和植物形成。",
+    "b": [
+     {
+      "q": "Which word describes the ground in a swamp?",
+      "qz": "哪个词描述沼泽的地面？",
+      "o": [
+       "Waterlogged",
+       "Dry and sandy",
+       "Frozen",
+       "Rocky"
+      ],
+      "oz": [
+       "积水的",
+       "干燥多沙的",
+       "结冰的",
+       "多岩石的"
+      ],
+      "a": 0,
+      "x": "Swamp ground is full of water. This keeps oxygen out.",
+      "xz": "沼泽地面充满了水，这让氧气进不去。"
+     },
+     {
+      "q": "What was the weather like in the coal swamps?",
+      "qz": "形成煤的沼泽地气候怎样？",
+      "o": [
+       "Warm and wet",
+       "Cold and dry",
+       "Hot and dry",
+       "Snowy"
+      ],
+      "oz": [
+       "温暖潮湿",
+       "寒冷干燥",
+       "炎热干燥",
+       "下雪"
+      ],
+      "a": 0,
+      "x": "Warm, wet weather helps big forests grow.",
+      "xz": "温暖潮湿的气候让大森林生长。"
+     }
+    ],
+    "id": "c5"
+   },
+   {
+    "q": "What is peat?",
+    "qz": "什么是泥炭？",
+    "o": [
+     "Part-decayed plants from a swamp",
+     "Plants that have fully rotted into soil",
+     "Hard black rock with lots of carbon",
+     "Oil inside swamp mud"
+    ],
+    "oz": [
+     "沼泽中部分分解的植物",
+     "完全腐烂成土壤的植物",
+     "含碳很多的坚硬黑色岩石",
+     "沼泽泥里的石油"
+    ],
+    "a": 0,
+    "w": {
+     "1": "If plants fully rot, the carbon goes into the air. Nothing is left.",
+     "2": "That is anthracite, the last stage of coal.",
+     "3": "Peat is made of plants, not oil."
+    },
+    "wz": {
+     "1": "如果植物完全腐烂，碳会进入空气，什么都不剩。",
+     "2": "那是无烟煤，煤的最后阶段。",
+     "3": "泥炭由植物构成，不是石油。"
+    },
+    "x": "Peat is soft, brown, part-decayed plant material. It is the first stage of coal.",
+    "xz": "泥炭是柔软、褐色、部分分解的植物物质。它是煤的第一阶段。",
+    "b": [
+     {
+      "q": "Why do dead plants in a swamp not rot away?",
+      "qz": "为什么沼泽中的死植物不会烂掉？",
+      "o": [
+       "There is little oxygen in the water",
+       "The swamp water is far too warm for bacteria",
+       "The plants are poisonous",
+       "The plants are too heavy"
+      ],
+      "oz": [
+       "水里的氧气很少",
+       "沼泽的水太热，细菌无法生存",
+       "植物有毒",
+       "植物太重"
+      ],
+      "a": 0,
+      "x": "Water fills the soil, so there is little oxygen. Decay is very slow.",
+      "xz": "水充满了土壤，所以氧气很少，分解非常慢。"
+     },
+     {
+      "q": "Peat is the first stage of…",
+      "qz": "泥炭是什么形成的第一阶段？",
+      "o": [
+       "coal",
+       "crude oil",
+       "sandstone",
+       "natural gas"
+      ],
+      "oz": [
+       "煤",
+       "原油",
+       "砂岩",
+       "天然气"
+      ],
+      "a": 0,
+      "x": "Peat → lignite → bituminous coal → anthracite.",
+      "xz": "泥炭 → 褐煤 → 烟煤 → 无烟煤。"
+     }
+    ],
+    "id": "c6"
+   }
+  ]
+ },
+ {
+  "id": "s4",
+  "title": "Coal 2: peat to coal",
+  "tz": "煤（二）：从泥炭到煤",
+  "teach": "<button type=\"button\" class=\"listen\" data-listen>🔊 Listen (English)</button>\n<p>Later, the sea or rivers flooded the swamp. <b>Sediment</b> (sand and mud) covered the peat. More and more layers built up on top.<span class=\"zh\">后来，海水或河水淹没了沼泽。<b>沉积物</b>（沙和泥）覆盖了泥炭。上面堆积了越来越多的层。</span></p>\n<ul class=\"pts\">\n<li>The <b>pressure</b> went up. It squeezed out <b>water</b>.<span class=\"zh\"><b>压力</b>增大，把<b>水</b>挤了出来。</span></li>\n<li>The <b>temperature</b> went up because it was deeper.<span class=\"zh\">因为埋得更深，<b>温度</b>升高了。</span></li>\n<li>After <b>millions of years</b>, heat and pressure changed the peat into <b>coal</b>.<span class=\"zh\">经过<b>数百万年</b>，热和压力把泥炭变成了<b>煤</b>。</span></li>\n</ul>\n{{FIG:coalstages}}\n<p>Deeper and longer burial makes better coal. Each stage has <b>more carbon</b> and less water. It is harder and gives more energy when burned.<span class=\"zh\">埋得越深、越久，煤的质量越好。每个阶段的<b>碳更多</b>，水更少。它更硬，燃烧时释放更多能量。</span></p>\n{{FIG:rank}}\n<p class=\"examtip\">Coal is found in <b>seams</b> (layers) between other rocks, such as sandstone and shale.<span class=\"zh\">煤以<b>煤层</b>的形式存在于其他岩石之间，例如砂岩和页岩。</span></p>\n<div class=\"gloss\"><h3>Key words <span class=\"zhi\">关键词</span></h3><div class=\"tblwrap\"><table class=\"st\"><thead><tr><th>English</th><th>中文</th><th>Meaning</th></tr></thead><tbody><tr><td><button type=\"button\" class=\"say\" data-say=\"compress / squash\" aria-label=\"Listen to compress / squash\">🔊</button> <b>compress / squash</b></td><td class=\"zhc\">压缩 / 压扁</td><td>to push something so it gets smaller</td></tr><tr><td><button type=\"button\" class=\"say\" data-say=\"coalification\" aria-label=\"Listen to coalification\">🔊</button> <b>coalification</b></td><td class=\"zhc\">煤化作用</td><td>peat changing into coal</td></tr><tr><td><button type=\"button\" class=\"say\" data-say=\"lignite\" aria-label=\"Listen to lignite\">🔊</button> <b>lignite</b></td><td class=\"zhc\">褐煤</td><td>brown coal: soft, less carbon</td></tr><tr><td><button type=\"button\" class=\"say\" data-say=\"bituminous coal\" aria-label=\"Listen to bituminous coal\">🔊</button> <b>bituminous coal</b></td><td class=\"zhc\">烟煤</td><td>hard black coal</td></tr><tr><td><button type=\"button\" class=\"say\" data-say=\"anthracite\" aria-label=\"Listen to anthracite\">🔊</button> <b>anthracite</b></td><td class=\"zhc\">无烟煤</td><td>very hard, shiny coal with the most carbon</td></tr><tr><td><button type=\"button\" class=\"say\" data-say=\"carbon content\" aria-label=\"Listen to carbon content\">🔊</button> <b>carbon content</b></td><td class=\"zhc\">含碳量</td><td>how much carbon is in it</td></tr><tr><td><button type=\"button\" class=\"say\" data-say=\"seam\" aria-label=\"Listen to seam\">🔊</button> <b>seam</b></td><td class=\"zhc\">煤层</td><td>a layer of coal in the rock</td></tr></tbody></table></div></div>\n",
+  "checks": [
+   {
+    "q": "What changes buried peat into coal?",
+    "qz": "是什么把埋藏的泥炭变成煤？",
+    "o": [
+     "Heat and pressure for millions of years",
+     "Oxygen going down through cracks",
+     "Decomposers working much faster underground",
+     "Rain soaking in for a few years"
+    ],
+    "oz": [
+     "数百万年的热和压力",
+     "氧气从裂缝渗下去",
+     "分解者在地下工作得更快",
+     "雨水渗入几年"
+    ],
+    "a": 0,
+    "w": {
+     "1": "Oxygen would make the peat rot away, not become coal.",
+     "2": "Decomposers stop working. Heat and pressure cause the change.",
+     "3": "Water is squeezed out, not added. And it takes millions of years."
+    },
+    "wz": {
+     "1": "氧气会让泥炭腐烂掉，而不是变成煤。",
+     "2": "分解者停止工作。是热和压力造成了变化。",
+     "3": "水是被挤出来的，不是加进去的。而且需要数百万年。"
+    },
+    "x": "Deep burial gives heat and pressure. Over millions of years, peat becomes coal.",
+    "xz": "深埋带来热和压力。经过数百万年，泥炭变成煤。",
+    "b": [
+     {
+      "q": "Peat is buried deeper. What happens to temperature and pressure?",
+      "qz": "泥炭被埋得更深。温度和压力会怎样？",
+      "o": [
+       "Both go up",
+       "Both go down",
+       "Temperature up, pressure down",
+       "Pressure up, temperature down"
+      ],
+      "oz": [
+       "两者都升高",
+       "两者都降低",
+       "温度升高，压力降低",
+       "压力升高，温度降低"
+      ],
+      "a": 0,
+      "x": "Deeper = more weight on top and a hotter Earth.",
+      "xz": "越深 = 上面越重，地球越热。"
+     },
+     {
+      "q": "What is squeezed out of peat?",
+      "qz": "什么从泥炭中被挤出来？",
+      "o": [
+       "Water",
+       "Carbon",
+       "Sand",
+       "Oil"
+      ],
+      "oz": [
+       "水",
+       "碳",
+       "沙",
+       "石油"
+      ],
+      "a": 0,
+      "x": "Squeezing takes out water. The carbon stays.",
+      "xz": "挤压去掉了水，碳留了下来。"
+     }
+    ],
+    "id": "c7"
+   },
+   {
+    "q": "Anthracite has more carbon than lignite. Why?",
+    "qz": "无烟煤比褐煤含碳更多。为什么？",
+    "o": [
+     "It was buried deeper, with more heat and pressure",
+     "It formed from a different animal",
+     "Its plants decayed more in the swamp",
+     "It formed more recently, so it lost less of its carbon"
+    ],
+    "oz": [
+     "它埋得更深，受到更多的热和压力",
+     "它由另一种动物形成",
+     "它的植物在沼泽中分解得更多",
+     "它形成得更晚，所以损失的碳更少"
+    ],
+    "a": 0,
+    "w": {
+     "1": "All coal comes from plants, not animals.",
+     "2": "More decay leaves less carbon. The difference comes from heat and pressure.",
+     "3": "Anthracite is usually older and deeper. More time and heat give more carbon."
+    },
+    "wz": {
+     "1": "所有的煤都来自植物，不是动物。",
+     "2": "分解越多，剩下的碳越少。差别来自热和压力。",
+     "3": "无烟煤通常更古老、埋得更深。更多的时间和热量带来更多的碳。"
+    },
+    "x": "Deeper means more heat and pressure. More water is removed, so more carbon is left.",
+    "xz": "越深，热和压力越大。更多的水被去除，所以剩下更多的碳。",
+    "b": [
+     {
+      "q": "Which order goes from least carbon to most carbon?",
+      "qz": "哪个顺序是从含碳最少到最多？",
+      "o": [
+       "Peat → lignite → bituminous → anthracite",
+       "Lignite → peat → anthracite → bituminous",
+       "Anthracite → bituminous → lignite → peat",
+       "Peat → anthracite → lignite → bituminous"
+      ],
+      "oz": [
+       "泥炭 → 褐煤 → 烟煤 → 无烟煤",
+       "褐煤 → 泥炭 → 无烟煤 → 烟煤",
+       "无烟煤 → 烟煤 → 褐煤 → 泥炭",
+       "泥炭 → 无烟煤 → 褐煤 → 烟煤"
+      ],
+      "a": 0,
+      "x": "Carbon goes up at each stage.",
+      "xz": "每个阶段含碳量都增加。"
+     },
+     {
+      "q": "Compared with anthracite, lignite (brown coal) is…",
+      "qz": "和无烟煤相比，褐煤……",
+      "o": [
+       "softer, with less carbon",
+       "harder, with more carbon",
+       "harder, with less carbon",
+       "softer, with more carbon"
+      ],
+      "oz": [
+       "更软，含碳更少",
+       "更硬，含碳更多",
+       "更硬，含碳更少",
+       "更软，含碳更多"
+      ],
+      "a": 0,
+      "x": "Lignite is an early stage. It is softer and has less carbon.",
+      "xz": "褐煤是早期阶段。它更软，含碳更少。"
+     }
+    ],
+    "id": "c8"
+   }
+  ]
+ },
+ {
+  "id": "s5",
+  "title": "Petroleum (crude oil)",
+  "tz": "石油（原油）",
+  "teach": "<button type=\"button\" class=\"listen\" data-listen>🔊 Listen (English)</button>\n<p>Oil did <b>not</b> form from land plants. It formed from <b>plankton</b>. Plankton are very small living things in the sea: tiny algae and tiny animals.<span class=\"zh\">石油<b>不是</b>由陆地植物形成的。它由<b>浮游生物</b>形成。浮游生物是海里非常小的生物：微小的藻类和微小的动物。</span></p>\n<ol class=\"steps\">\n<li>The plankton died and <b>sank</b> to the <b>seabed</b>.<span class=\"zh\">浮游生物死后<b>沉</b>到<b>海底</b>。</span></li>\n<li>They mixed with <b>mud</b>. There was very little oxygen. Decay was <b>incomplete</b>.<span class=\"zh\">它们和<b>泥</b>混在一起。那里氧气很少。分解是<b>不完全的</b>。</span></li>\n<li>More sediment buried the mud. The mud was squashed into a rock called <b>shale</b>. The dead plankton changed into a waxy material called <b>kerogen</b>.<span class=\"zh\">更多的沉积物掩埋了泥。泥被压成一种叫<b>页岩</b>的岩石。死去的浮游生物变成一种像蜡一样的物质，叫<b>干酪根</b>。</span></li>\n<li>Deeper down, <b>heat and pressure</b> changed the kerogen into <b>crude oil</b>. This took <b>millions of years</b>.<span class=\"zh\">在更深的地方，<b>热和压力</b>把干酪根变成<b>原油</b>。这需要<b>数百万年</b>。</span></li>\n</ol>\n{{FIG:oilstages}}\n<p class=\"examtip\">Oil is <b>not</b> made from dinosaurs! It comes from tiny sea life. The rock where oil forms is the <b>source rock</b>.<span class=\"zh\">石油<b>不是</b>由恐龙形成的！它来自海里的微小生物。形成石油的岩石叫<b>烃源岩</b>。</span></p>\n<div class=\"gloss\"><h3>Key words <span class=\"zhi\">关键词</span></h3><div class=\"tblwrap\"><table class=\"st\"><thead><tr><th>English</th><th>中文</th><th>Meaning</th></tr></thead><tbody><tr><td><button type=\"button\" class=\"say\" data-say=\"plankton\" aria-label=\"Listen to plankton\">🔊</button> <b>plankton</b></td><td class=\"zhc\">浮游生物</td><td>very small living things that float in the sea</td></tr><tr><td><button type=\"button\" class=\"say\" data-say=\"seabed\" aria-label=\"Listen to seabed\">🔊</button> <b>seabed</b></td><td class=\"zhc\">海底</td><td>the floor of the sea</td></tr><tr><td><button type=\"button\" class=\"say\" data-say=\"sink / sank\" aria-label=\"Listen to sink / sank\">🔊</button> <b>sink / sank</b></td><td class=\"zhc\">下沉</td><td>to go down in water</td></tr><tr><td><button type=\"button\" class=\"say\" data-say=\"shale\" aria-label=\"Listen to shale\">🔊</button> <b>shale</b></td><td class=\"zhc\">页岩</td><td>rock made from squashed mud</td></tr><tr><td><button type=\"button\" class=\"say\" data-say=\"kerogen\" aria-label=\"Listen to kerogen\">🔊</button> <b>kerogen</b></td><td class=\"zhc\">干酪根</td><td>a waxy material made from dead plankton</td></tr><tr><td><button type=\"button\" class=\"say\" data-say=\"crude oil\" aria-label=\"Listen to crude oil\">🔊</button> <b>crude oil</b></td><td class=\"zhc\">原油</td><td>oil as it comes out of the ground</td></tr><tr><td><button type=\"button\" class=\"say\" data-say=\"source rock\" aria-label=\"Listen to source rock\">🔊</button> <b>source rock</b></td><td class=\"zhc\">烃源岩</td><td>the rock where oil and gas form</td></tr></tbody></table></div></div>\n",
+  "checks": [
+   {
+    "q": "Crude oil formed mostly from…",
+    "qz": "原油主要由什么形成？",
+    "o": [
+     "plankton in the sea",
+     "trees in swamp forests",
+     "dinosaurs that died on land",
+     "whales on the seabed"
+    ],
+    "oz": [
+     "海里的浮游生物",
+     "沼泽森林里的树",
+     "死在陆地上的恐龙",
+     "海底的鲸鱼"
+    ],
+    "a": 0,
+    "w": {
+     "1": "That is coal. Oil formed from sea life.",
+     "2": "This is a myth. Oil formed from tiny plankton.",
+     "3": "Big animals were only a tiny part. Huge numbers of plankton made the oil."
+    },
+    "wz": {
+     "1": "那是煤。石油由海洋生物形成。",
+     "2": "这是一个误解。石油由微小的浮游生物形成。",
+     "3": "大型动物只占很小一部分。大量的浮游生物形成了石油。"
+    },
+    "x": "Oil formed from huge numbers of plankton. They died, sank and were buried in mud.",
+    "xz": "石油由大量浮游生物形成。它们死亡、下沉，并被埋在泥里。",
+    "b": [
+     {
+      "q": "What are plankton?",
+      "qz": "什么是浮游生物？",
+      "o": [
+       "Tiny living things in the sea",
+       "Big fish that live on the deep seabed",
+       "Plants in a swamp",
+       "Rocks made of shells"
+      ],
+      "oz": [
+       "海里的微小生物",
+       "生活在深海底的大鱼",
+       "沼泽里的植物",
+       "由贝壳形成的岩石"
+      ],
+      "a": 0,
+      "x": "Plankton are tiny algae and animals in the sea.",
+      "xz": "浮游生物是海里微小的藻类和动物。"
+     },
+     {
+      "q": "Where did the dead plankton collect?",
+      "qz": "死去的浮游生物聚集在哪里？",
+      "o": [
+       "In mud on the seabed",
+       "Floating on the sea surface",
+       "On beaches",
+       "In the air"
+      ],
+      "oz": [
+       "海底的泥里",
+       "漂浮在海面上",
+       "海滩上",
+       "空气中"
+      ],
+      "a": 0,
+      "x": "They sank into the mud on the seabed.",
+      "xz": "它们沉入海底的泥里。"
+     }
+    ],
+    "id": "c9"
+   },
+   {
+    "q": "What is kerogen?",
+    "qz": "什么是干酪根？",
+    "o": [
+     "A waxy material from dead plankton",
+     "The hard rock on top that traps the oil",
+     "A gas made by decomposers",
+     "Fuel made from oil in a factory"
+    ],
+    "oz": [
+     "由死去的浮游生物形成的蜡状物质",
+     "上面困住石油的坚硬岩石",
+     "分解者产生的气体",
+     "在工厂里用石油制成的燃料"
+    ],
+    "a": 0,
+    "w": {
+     "1": "That is cap rock. Kerogen is inside the source rock.",
+     "2": "Kerogen is a solid, waxy material. Later, heat changes it into oil and gas.",
+     "3": "Kerogen forms underground, before the oil. Factories come later."
+    },
+    "wz": {
+     "1": "那是盖层。干酪根在烃源岩里面。",
+     "2": "干酪根是固体的蜡状物质。之后热量把它变成石油和天然气。",
+     "3": "干酪根在地下形成，在石油之前。工厂是之后的事。"
+    },
+    "x": "Kerogen is a waxy material made from dead plankton. Heat changes it into oil and gas.",
+    "xz": "干酪根是由死去的浮游生物形成的蜡状物质。热量把它变成石油和天然气。",
+    "b": [
+     {
+      "q": "What happens to kerogen when it is heated deep underground?",
+      "qz": "干酪根在地下深处被加热时会怎样？",
+      "o": [
+       "It changes into oil and gas",
+       "It changes back into plankton",
+       "It changes into sand",
+       "It freezes"
+      ],
+      "oz": [
+       "变成石油和天然气",
+       "变回浮游生物",
+       "变成沙子",
+       "结冰"
+      ],
+      "a": 0,
+      "x": "Heat and pressure change kerogen into oil (and gas if hotter).",
+      "xz": "热和压力把干酪根变成石油（更热时变成天然气）。"
+     },
+     {
+      "q": "Mud is squashed into which rock?",
+      "qz": "泥被压成哪种岩石？",
+      "o": [
+       "Shale",
+       "Granite",
+       "Marble",
+       "Basalt"
+      ],
+      "oz": [
+       "页岩",
+       "花岗岩",
+       "大理石",
+       "玄武岩"
+      ],
+      "a": 0,
+      "x": "Squashed mud becomes shale.",
+      "xz": "被压实的泥变成页岩。"
+     }
+    ],
+    "id": "c10"
+   }
+  ]
+ },
+ {
+  "id": "s6",
+  "title": "Natural gas (methane)",
+  "tz": "天然气（甲烷）",
+  "teach": "<button type=\"button\" class=\"listen\" data-listen>🔊 Listen (English)</button>\n<p>Natural gas is mostly <b>methane</b> (CH₄). It forms in the <b>same way as oil</b>, from plankton in seabed mud.<span class=\"zh\">天然气主要是<b>甲烷</b>（CH₄）。它的形成方式<b>和石油一样</b>，来自海底泥中的浮游生物。</span></p>\n<p>The difference is the <b>temperature</b>. If the rock is buried <b>deeper</b>, it gets <b>hotter</b>. Then the kerogen and oil break into smaller molecules: <b>gas</b>.<span class=\"zh\">区别在于<b>温度</b>。如果岩石埋得<b>更深</b>，就会<b>更热</b>。这时干酪根和石油分解成更小的分子：<b>天然气</b>。</span></p>\n{{FIG:window}}\n<p>So oil and gas are often <b>found together</b>. They come from the same rock.<span class=\"zh\">所以石油和天然气经常<b>在一起被发现</b>。它们来自同一种岩石。</span></p>\n<p>Some natural gas also forms from <b>coal</b>. This is why coal mines can have dangerous methane gas.<span class=\"zh\">有些天然气也由<b>煤</b>形成。这就是为什么煤矿里会有危险的甲烷气体。</span></p>\n<div class=\"gloss\"><h3>Key words <span class=\"zhi\">关键词</span></h3><div class=\"tblwrap\"><table class=\"st\"><thead><tr><th>English</th><th>中文</th><th>Meaning</th></tr></thead><tbody><tr><td><button type=\"button\" class=\"say\" data-say=\"methane\" aria-label=\"Listen to methane\">🔊</button> <b>methane</b></td><td class=\"zhc\">甲烷</td><td>the main gas in natural gas, CH₄</td></tr><tr><td><button type=\"button\" class=\"say\" data-say=\"molecule\" aria-label=\"Listen to molecule\">🔊</button> <b>molecule</b></td><td class=\"zhc\">分子</td><td>a very, very small particle</td></tr><tr><td><button type=\"button\" class=\"say\" data-say=\"oil window\" aria-label=\"Listen to oil window\">🔊</button> <b>oil window</b></td><td class=\"zhc\">生油窗</td><td>the temperatures where oil forms</td></tr><tr><td><button type=\"button\" class=\"say\" data-say=\"gas window\" aria-label=\"Listen to gas window\">🔊</button> <b>gas window</b></td><td class=\"zhc\">生气窗</td><td>hotter temperatures where gas forms</td></tr><tr><td><button type=\"button\" class=\"say\" data-say=\"deeper\" aria-label=\"Listen to deeper\">🔊</button> <b>deeper</b></td><td class=\"zhc\">更深</td><td>further down</td></tr></tbody></table></div></div>\n",
+  "checks": [
+   {
+    "q": "How is the formation of gas different from oil?",
+    "qz": "天然气的形成和石油有什么不同？",
+    "o": [
+     "Gas forms at higher temperatures, deeper down",
+     "Gas forms from plants, oil from animals",
+     "Gas forms near the surface, where it is cooler",
+     "Gas forms in a few years, oil in millions"
+    ],
+    "oz": [
+     "天然气在更深、温度更高的地方形成",
+     "天然气来自植物，石油来自动物",
+     "天然气在靠近地面、较冷的地方形成",
+     "天然气几年就形成，石油需要数百万年"
+    ],
+    "a": 0,
+    "w": {
+     "1": "Both come mostly from the same plankton.",
+     "2": "It is the opposite: gas forms deeper, where it is hotter.",
+     "3": "Both take millions of years."
+    },
+    "wz": {
+     "1": "两者大多来自同样的浮游生物。",
+     "2": "正好相反：天然气在更深、更热的地方形成。",
+     "3": "两者都需要数百万年。"
+    },
+    "x": "Oil and gas come from the same remains. Higher temperatures, deeper down, make gas.",
+    "xz": "石油和天然气来自同样的遗骸。更深处更高的温度形成天然气。",
+    "b": [
+     {
+      "q": "What is the main gas in natural gas?",
+      "qz": "天然气中主要的气体是什么？",
+      "o": [
+       "Methane",
+       "Oxygen",
+       "Carbon dioxide",
+       "Nitrogen"
+      ],
+      "oz": [
+       "甲烷",
+       "氧气",
+       "二氧化碳",
+       "氮气"
+      ],
+      "a": 0,
+      "x": "Natural gas is mostly methane, CH₄.",
+      "xz": "天然气主要是甲烷，CH₄。"
+     },
+     {
+      "q": "Why are oil and gas often found together?",
+      "qz": "为什么石油和天然气经常在一起？",
+      "o": [
+       "They form from the same remains",
+       "Gas is made when oil burns",
+       "Oil takes gas from the air",
+       "People put the gas there"
+      ],
+      "oz": [
+       "它们由同样的遗骸形成",
+       "石油燃烧时产生天然气",
+       "石油从空气中吸收气体",
+       "人们把天然气放在那里"
+      ],
+      "a": 0,
+      "x": "Both form from plankton in the same rock.",
+      "xz": "两者都由同一岩石中的浮游生物形成。"
+     }
+    ],
+    "id": "c11"
+   },
+   {
+    "q": "Look at the diagram. The rock is at about 160 °C. What does it make?",
+    "qz": "看图。岩石的温度大约是160 °C。它会形成什么？",
+    "o": [
+     "Mostly natural gas",
+     "Mostly crude oil",
+     "Mostly coal",
+     "Nothing yet"
+    ],
+    "oz": [
+     "主要是天然气",
+     "主要是原油",
+     "主要是煤",
+     "还没有形成任何东西"
+    ],
+    "a": 0,
+    "w": {
+     "1": "160 °C is hotter than the oil window. It is in the gas window.",
+     "2": "Coal forms from swamp plants, not from kerogen.",
+     "3": "160 °C is hot enough. Something has formed."
+    },
+    "wz": {
+     "1": "160 °C比生油窗更热。它在生气窗里。",
+     "2": "煤由沼泽植物形成，不是由干酪根形成。",
+     "3": "160 °C已经足够热，已经形成了东西。"
+    },
+    "x": "160 °C is in the gas window, so natural gas forms.",
+    "xz": "160 °C在生气窗里，所以形成天然气。",
+    "b": [
+     {
+      "q": "Look at the diagram. Deeper down, the temperature…",
+      "qz": "看图。越深，温度……",
+      "o": [
+       "goes up",
+       "goes down",
+       "stays the same",
+       "goes up, then down"
+      ],
+      "oz": [
+       "升高",
+       "降低",
+       "不变",
+       "先升高，后降低"
+      ],
+      "a": 0,
+      "x": "Deeper rock is hotter.",
+      "xz": "越深的岩石越热。",
+      "fig": "window"
+     },
+     {
+      "q": "Look at the diagram. At about 80 °C, kerogen mostly makes…",
+      "qz": "看图。大约80 °C时，干酪根主要形成……",
+      "o": [
+       "oil",
+       "gas",
+       "coal",
+       "peat"
+      ],
+      "oz": [
+       "石油",
+       "天然气",
+       "煤",
+       "泥炭"
+      ],
+      "a": 0,
+      "x": "80 °C is in the oil window.",
+      "xz": "80 °C在生油窗里。",
+      "fig": "window"
+     }
+    ],
+    "fig": "window",
+    "id": "c12"
+   }
+  ]
+ },
+ {
+  "id": "s7",
+  "title": "Trapping oil and gas",
+  "tz": "石油和天然气怎样被困住",
+  "teach": "<button type=\"button\" class=\"listen\" data-listen>🔊 Listen (English)</button>\n<p>Oil and gas do not stay in the source rock. They are <b>less dense</b> than water (lighter for their size). So they slowly move <b>up</b>.<span class=\"zh\">石油和天然气不会留在烃源岩里。它们的<b>密度比水小</b>（同样大小更轻）。所以它们慢慢向<b>上</b>移动。</span></p>\n<p>They move through <b>porous</b> rock, like <b>sandstone</b>. Porous rock has tiny holes between the grains. Liquids and gases can flow through it. It is <b>permeable</b>.<span class=\"zh\">它们穿过<b>多孔的</b>岩石，例如<b>砂岩</b>。多孔岩石的颗粒之间有微小的孔隙。液体和气体可以流过它。它是<b>可渗透的</b>。</span></p>\n<p>They stop when they reach <b>cap rock</b>. Cap rock is <b>impermeable</b>: liquids and gases cannot go through it. Shale and clay are examples. Often the rocks make a <b>dome</b> shape. This is a <b>trap</b>.<span class=\"zh\">当它们遇到<b>盖层</b>时就停下来。盖层是<b>不可渗透的</b>：液体和气体不能穿过它。页岩和黏土就是例子。岩石常常形成<b>穹顶</b>形状。这就是<b>圈闭</b>。</span></p>\n{{FIG:trap}}\n<p>In the trap, <b>gas is at the top</b>, then <b>oil</b>, then <b>water</b> at the bottom.<span class=\"zh\">在圈闭中，<b>天然气在最上面</b>，然后是<b>石油</b>，<b>水</b>在最下面。</span></p>\n<p class=\"examtip\">It is <b>not</b> an underground lake! The oil is in the tiny holes in the rock, like water in a sponge.<span class=\"zh\">这<b>不是</b>地下湖！石油在岩石的微小孔隙里，就像海绵里的水。</span></p>\n<div class=\"gloss\"><h3>Key words <span class=\"zhi\">关键词</span></h3><div class=\"tblwrap\"><table class=\"st\"><thead><tr><th>English</th><th>中文</th><th>Meaning</th></tr></thead><tbody><tr><td><button type=\"button\" class=\"say\" data-say=\"dense / density\" aria-label=\"Listen to dense / density\">🔊</button> <b>dense / density</b></td><td class=\"zhc\">密度</td><td>how heavy something is for its size</td></tr><tr><td><button type=\"button\" class=\"say\" data-say=\"migrate\" aria-label=\"Listen to migrate\">🔊</button> <b>migrate</b></td><td class=\"zhc\">运移</td><td>to move slowly</td></tr><tr><td><button type=\"button\" class=\"say\" data-say=\"porous\" aria-label=\"Listen to porous\">🔊</button> <b>porous</b></td><td class=\"zhc\">多孔的</td><td>with many tiny holes</td></tr><tr><td><button type=\"button\" class=\"say\" data-say=\"permeable\" aria-label=\"Listen to permeable\">🔊</button> <b>permeable</b></td><td class=\"zhc\">可渗透的</td><td>liquids can flow through it</td></tr><tr><td><button type=\"button\" class=\"say\" data-say=\"impermeable\" aria-label=\"Listen to impermeable\">🔊</button> <b>impermeable</b></td><td class=\"zhc\">不可渗透的</td><td>liquids cannot flow through it</td></tr><tr><td><button type=\"button\" class=\"say\" data-say=\"cap rock\" aria-label=\"Listen to cap rock\">🔊</button> <b>cap rock</b></td><td class=\"zhc\">盖层</td><td>the rock on top that stops oil and gas</td></tr><tr><td><button type=\"button\" class=\"say\" data-say=\"reservoir rock\" aria-label=\"Listen to reservoir rock\">🔊</button> <b>reservoir rock</b></td><td class=\"zhc\">储集岩</td><td>the rock that holds the oil and gas</td></tr><tr><td><button type=\"button\" class=\"say\" data-say=\"trap\" aria-label=\"Listen to trap\">🔊</button> <b>trap</b></td><td class=\"zhc\">圈闭</td><td>a place where oil and gas stop and collect</td></tr></tbody></table></div></div>\n",
+  "checks": [
+   {
+    "q": "Why do oil and gas move up?",
+    "qz": "为什么石油和天然气向上移动？",
+    "o": [
+     "They are less dense than water",
+     "They are more dense than rock",
+     "Plant roots pull them up",
+     "Sunlight heats them underground"
+    ],
+    "oz": [
+     "它们的密度比水小",
+     "它们的密度比岩石大",
+     "植物的根把它们拉上来",
+     "阳光在地下加热它们"
+    ],
+    "a": 0,
+    "w": {
+     "1": "Dense things sink. Oil and gas go up because they are less dense.",
+     "2": "Oil and gas are far below plant roots.",
+     "3": "Sunlight does not reach underground."
+    },
+    "wz": {
+     "1": "密度大的东西会下沉。石油和天然气上升是因为它们密度小。",
+     "2": "石油和天然气在植物根部以下很深的地方。",
+     "3": "阳光照不到地下。"
+    },
+    "x": "Oil and gas are less dense than water, so they rise through the rock.",
+    "xz": "石油和天然气的密度比水小，所以它们穿过岩石上升。",
+    "b": [
+     {
+      "q": "'Permeable' rock means…",
+      "qz": "“可渗透的”岩石是指……",
+      "o": [
+       "liquids can flow through it",
+       "it is too hard to scratch",
+       "it has lots of fossils",
+       "it dissolves in water"
+      ],
+      "oz": [
+       "液体可以流过它",
+       "它太硬，划不动",
+       "它有很多化石",
+       "它会溶于水"
+      ],
+      "a": 0,
+      "x": "Permeable rock lets liquids and gases flow through.",
+      "xz": "可渗透的岩石让液体和气体流过。"
+     },
+     {
+      "q": "Cooking oil floats on water. This shows oil is…",
+      "qz": "食用油浮在水面上。这说明油……",
+      "o": [
+       "less dense than water",
+       "more dense than water",
+       "the same density as water",
+       "able to dissolve in water"
+      ],
+      "oz": [
+       "密度比水小",
+       "密度比水大",
+       "和水密度一样",
+       "能溶于水"
+      ],
+      "a": 0,
+      "x": "Less dense liquids float. That is why oil goes up through wet rock.",
+      "xz": "密度较小的液体会浮起来。这就是石油穿过湿的岩石向上移动的原因。"
+     }
+    ],
+    "id": "c13"
+   },
+   {
+    "q": "Look at the diagram. What stops the oil and gas from escaping?",
+    "qz": "看图。是什么阻止石油和天然气逃走？",
+    "o": [
+     "Impermeable cap rock above them",
+     "Porous sandstone lying on top of them",
+     "Water above them",
+     "The source rock above them"
+    ],
+    "oz": [
+     "上面的不可渗透盖层",
+     "上面的多孔砂岩",
+     "上面的水",
+     "上面的烃源岩"
+    ],
+    "a": 0,
+    "w": {
+     "1": "Porous rock lets oil and gas through. That is the reservoir rock.",
+     "2": "The water is below the oil, not above.",
+     "3": "The source rock is below. That is where the oil formed."
+    },
+    "wz": {
+     "1": "多孔岩石让石油和天然气通过。那是储集岩。",
+     "2": "水在石油下面，不在上面。",
+     "3": "烃源岩在下面。那是石油形成的地方。"
+    },
+    "x": "Cap rock is impermeable. Oil and gas cannot go through it, so they collect under it.",
+    "xz": "盖层是不可渗透的。石油和天然气不能穿过它，所以聚集在它下面。",
+    "b": [
+     {
+      "q": "Look at the diagram. From top to bottom, the order is…",
+      "qz": "看图。从上到下的顺序是……",
+      "o": [
+       "gas, oil, water",
+       "water, oil, gas",
+       "oil, gas, water",
+       "oil, water, gas"
+      ],
+      "oz": [
+       "天然气、石油、水",
+       "水、石油、天然气",
+       "石油、天然气、水",
+       "石油、水、天然气"
+      ],
+      "a": 0,
+      "x": "The least dense is at the top: gas, then oil, then water.",
+      "xz": "密度最小的在最上面：天然气，然后石油，然后水。",
+      "fig": "trap"
+     },
+     {
+      "q": "Where is the oil in reservoir rock?",
+      "qz": "储集岩中的石油在哪里？",
+      "o": [
+       "In tiny holes between grains",
+       "In a big lake in a cave",
+       "Inside fossil shells only",
+       "Inside the cap rock"
+      ],
+      "oz": [
+       "在颗粒之间的微小孔隙里",
+       "在洞穴的大湖里",
+       "只在化石贝壳里",
+       "在盖层里"
+      ],
+      "a": 0,
+      "x": "Oil fills the tiny holes in the rock, like water in a sponge.",
+      "xz": "石油充满岩石的微小孔隙，就像海绵里的水。"
+     }
+    ],
+    "fig": "trap",
+    "id": "c14"
+   }
+  ]
+ },
+ {
+  "id": "s8",
+  "title": "Putting it all together",
+  "tz": "总结",
+  "teach": "<button type=\"button\" class=\"listen\" data-listen>🔊 Listen (English)</button>\n<p>Use this table to compare the three fossil fuels.<span class=\"zh\">用这张表比较三种化石燃料。</span></p>\n{{FIG:compare}}\n<p class=\"examtip\"><b>Exam tip:</b> to <b>describe the formation</b>, write the steps in order: <b>what</b> died → <b>where</b> → <b>buried</b> by sediment → <b>little oxygen</b>, so decay is incomplete → <b>heat and pressure</b> → <b>millions of years</b>.<span class=\"zh\"><b>考试提示：</b><b>描述形成过程</b>时，要按顺序写出步骤：<b>什么</b>死了 → 在<b>哪里</b> → 被沉积物<b>掩埋</b> → <b>氧气少</b>，所以分解不完全 → <b>热和压力</b> → <b>数百万年</b>。</span></p>\n<div class=\"model\"><h3>Model answer: how coal formed <span class=\"zhi\">范文：煤是怎样形成的</span></h3><p>Coal formed from <b>plants</b> that lived in <b>swamps</b> millions of years ago. When the plants died, they fell into the water. There was <b>little oxygen</b>, so they did <b>not fully decay</b>. They formed <b>peat</b>. <b>Sediment</b> buried the peat. Over <b>millions of years</b>, <b>heat and pressure</b> changed it into coal.<span class=\"zh\">煤由数百万年前生活在沼泽里的植物形成。植物死后倒进水里。那里氧气很少，所以它们没有完全分解，形成了泥炭。沉积物掩埋了泥炭。经过数百万年，热和压力把它变成了煤。</span></p>\n<h3>Model answer: how oil and gas formed <span class=\"zhi\">范文：石油和天然气是怎样形成的</span></h3><p>Oil and gas formed from <b>plankton</b> in the sea. When the plankton died, they sank into <b>mud</b> on the seabed. There was <b>little oxygen</b>, so they did <b>not fully decay</b>. <b>Sediment</b> buried them. Over <b>millions of years</b>, <b>heat and pressure</b> changed them into oil. At <b>higher temperatures</b>, natural gas formed.<span class=\"zh\">石油和天然气由海里的浮游生物形成。浮游生物死后沉入海底的泥里。那里氧气很少，所以它们没有完全分解。沉积物掩埋了它们。经过数百万年，热和压力把它们变成石油。在更高的温度下，形成了天然气。</span></p>\n</div>\n",
+  "checks": [
+   {
+    "q": "Which is true for all three fossil fuels?",
+    "qz": "哪一项对三种化石燃料都正确？",
+    "o": [
+     "They formed with little oxygen",
+     "They formed from sea plankton",
+     "They formed in swamp forests",
+     "They formed in a few thousand years"
+    ],
+    "oz": [
+     "它们在氧气很少的情况下形成",
+     "它们由海洋浮游生物形成",
+     "它们在沼泽森林中形成",
+     "它们在几千年内形成"
+    ],
+    "a": 0,
+    "w": {
+     "1": "Coal formed from land plants, not plankton.",
+     "2": "Only coal formed in swamps. Oil and gas formed in the sea.",
+     "3": "All of them took millions of years."
+    },
+    "wz": {
+     "1": "煤由陆地植物形成，不是浮游生物。",
+     "2": "只有煤在沼泽中形成。石油和天然气在海中形成。",
+     "3": "它们都需要数百万年。"
+    },
+    "x": "All three formed with little oxygen, so decay was incomplete. Then heat and pressure worked for millions of years.",
+    "xz": "三者都在氧气很少的情况下形成，所以分解不完全。然后热和压力作用了数百万年。",
+    "b": [
+     {
+      "q": "Which fuel formed mainly from land plants?",
+      "qz": "哪种燃料主要由陆地植物形成？",
+      "o": [
+       "Coal",
+       "Crude oil",
+       "Natural gas",
+       "All three"
+      ],
+      "oz": [
+       "煤",
+       "原油",
+       "天然气",
+       "三种都是"
+      ],
+      "a": 0,
+      "x": "Coal formed from swamp plants.",
+      "xz": "煤由沼泽植物形成。"
+     },
+     {
+      "q": "Which fuels formed mainly from plankton?",
+      "qz": "哪些燃料主要由浮游生物形成？",
+      "o": [
+       "Oil and natural gas",
+       "Coal and oil",
+       "Only coal",
+       "Coal and natural gas"
+      ],
+      "oz": [
+       "石油和天然气",
+       "煤和石油",
+       "只有煤",
+       "煤和天然气"
+      ],
+      "a": 0,
+      "x": "Oil and natural gas formed from plankton in seabed mud.",
+      "xz": "石油和天然气由海底泥中的浮游生物形成。"
+     }
+    ],
+    "id": "c15"
+   },
+   {
+    "q": "A student writes: ‘Coal forms when dead plants rot away completely.’ What is wrong?",
+    "qz": "一个学生写道：“死去的植物完全腐烂后就形成了煤。”哪里错了？",
+    "o": [
+     "The plants only partly decay",
+     "Coal forms from sea animals, not plants",
+     "Swamps have too much oxygen",
+     "Rotting must happen in the sea"
+    ],
+    "oz": [
+     "植物只是部分分解",
+     "煤由海洋动物形成，不是植物",
+     "沼泽里的氧气太多",
+     "腐烂必须发生在海里"
+    ],
+    "a": 0,
+    "w": {
+     "1": "Coal does form from plants. The mistake is the word 'completely'.",
+     "2": "Swamps have very little oxygen. That is why peat builds up.",
+     "3": "Coal forms from land plants in swamps. The mistake is 'completely'."
+    },
+    "wz": {
+     "1": "煤确实由植物形成。错误在于“完全”这个词。",
+     "2": "沼泽里的氧气很少。这就是泥炭会堆积的原因。",
+     "3": "煤由沼泽中的陆地植物形成。错误在于“完全”。"
+    },
+    "x": "If plants rot completely, the carbon goes into the air. Coal forms because decay is incomplete.",
+    "xz": "如果植物完全腐烂，碳会进入空气。煤之所以形成，是因为分解不完全。",
+    "b": [
+     {
+      "q": "Decomposers fully break down a dead plant. Where does its carbon go?",
+      "qz": "分解者完全分解了一株死去的植物。它的碳去了哪里？",
+      "o": [
+       "Into the air as carbon dioxide",
+       "Into a coal seam deep under the ground",
+       "Into the sea as oil",
+       "Into the swamp water as sugar"
+      ],
+      "oz": [
+       "以二氧化碳的形式进入空气",
+       "进入地下深处的煤层",
+       "以石油的形式进入海里",
+       "以糖的形式进入沼泽的水"
+      ],
+      "a": 0,
+      "x": "Complete decay puts the carbon into the air. Nothing is left to make coal.",
+      "xz": "完全分解把碳送进空气，什么都不剩来形成煤。"
+     },
+     {
+      "q": "What is needed for coal to form?",
+      "qz": "形成煤需要什么？",
+      "o": [
+       "Burial, little oxygen, heat and pressure",
+       "Lots of oxygen, decomposers and sunlight",
+       "Ice, dry air and wind",
+       "Air, sunlight and warm water"
+      ],
+      "oz": [
+       "掩埋、少量氧气、热和压力",
+       "大量氧气、分解者和阳光",
+       "冰、干燥的空气和风",
+       "空气、阳光和温暖的水"
+      ],
+      "a": 0,
+      "x": "Burial stops oxygen. Then heat and pressure work for millions of years.",
+      "xz": "掩埋阻止了氧气。然后热和压力作用数百万年。"
+     }
+    ],
+    "id": "c16"
+   }
+  ]
+ }
+];
+const SUMMARY = [
+ [
+  "Fossil fuels formed from organisms that died millions of years ago. They are non-renewable.",
+  "化石燃料由数百万年前死亡的生物形成。它们是不可再生的。"
+ ],
+ [
+  "The steps: die → buried by sediment → little oxygen, so decay is incomplete → heat and pressure → millions of years.",
+  "步骤：死亡 → 被沉积物掩埋 → 氧气少，所以分解不完全 → 热和压力 → 数百万年。"
+ ],
+ [
+  "Coal formed from plants in swamps. Part-decayed plants made peat.",
+  "煤由沼泽中的植物形成。部分分解的植物形成泥炭。"
+ ],
+ [
+  "Peat was buried. Heat and pressure made coal: peat → lignite → bituminous coal → anthracite. Carbon goes up at each stage.",
+  "泥炭被掩埋。热和压力形成煤：泥炭 → 褐煤 → 烟煤 → 无烟煤。每个阶段含碳量都增加。"
+ ],
+ [
+  "Oil formed from plankton in seabed mud. The mud became shale. The plankton became kerogen, then oil.",
+  "石油由海底泥中的浮游生物形成。泥变成页岩。浮游生物变成干酪根，然后变成石油。"
+ ],
+ [
+  "Natural gas (mostly methane) forms like oil, but at higher temperatures, deeper down.",
+  "天然气（主要是甲烷）的形成和石油一样，但在更深、温度更高的地方。"
+ ],
+ [
+  "Oil and gas are less dense than water. They rise through porous rock until impermeable cap rock traps them.",
+  "石油和天然气的密度比水小。它们穿过多孔岩石上升，直到被不可渗透的盖层困住。"
+ ]
+];
+
+/* ===== Diagrams: formation of fossil fuels ===== */
+const F = {};
+const ar = (x1, y1, x2, y2, cls = "flow") => {
+  const a = Math.atan2(y2 - y1, x2 - x1), h = 9;
+  const p1 = [x2 - h * Math.cos(a - 0.45), y2 - h * Math.sin(a - 0.45)], p2 = [x2 - h * Math.cos(a + 0.45), y2 - h * Math.sin(a + 0.45)];
+  return `<g class="${cls}"><line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}"/><path d="M ${p1[0].toFixed(1)} ${p1[1].toFixed(1)} L ${x2} ${y2} L ${p2[0].toFixed(1)} ${p2[1].toFixed(1)}"/></g>`;
+};
+const lead = (x1, y1, x2, y2) => `<line class="lead" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}"/><circle class="dot" cx="${x1}" cy="${y1}" r="3"/>`;
+const mkr = (n, x, y) => `<circle class="mk" cx="${x}" cy="${y}" r="13"/><text class="mkn" x="${x}" y="${y + 6}" text-anchor="middle">${n}</text>`;
+const T = (x, y, t, cls = "lbl", anchor = "start") => `<text class="${cls}" x="${x}" y="${y}" text-anchor="${anchor}">${t}</text>`;
+
+/* --- S1: the three fuels --- */
+F.three = () => `<figure class="fig"><div class="src3">
+  <div class="tile ff-coal"><h4>Coal <span class="zhi">煤</span></h4><p class="st8">Solid · 固体</p><p>Formed from <b>plants</b> in swamp forests on land.<span class="zh">由陆地沼泽森林中的植物形成。</span></p></div>
+  <div class="tile ff-oil"><h4>Petroleum (crude oil) <span class="zhi">石油（原油）</span></h4><p class="st8">Liquid · 液体</p><p>Formed from <b>plankton</b>: tiny living things in the sea.<span class="zh">由浮游生物形成：海里的微小生物。</span></p></div>
+  <div class="tile ff-gas"><h4>Natural gas <span class="zhi">天然气</span></h4><p class="st8">Gas, mostly methane (CH₄) · 气体，主要是甲烷</p><p>Formed from plankton, like oil, but at <b>higher temperatures</b>.<span class="zh">和石油一样由浮游生物形成，但温度更高。</span></p></div>
+</div><figcaption>The three fossil fuels and what they formed from.</figcaption></figure>`;
+
+/* --- S2: the recipe --- */
+F.recipe = () => `<figure class="fig"><div class="chain flowc">
+  <div class="part"><b>1. Death</b><span>many organisms die</span><span class="zh">死亡：大量生物死亡</span></div><i></i>
+  <div class="part"><b>2. Burial</b><span>covered quickly by sediment</span><span class="zh">掩埋：很快被沉积物覆盖</span></div><i></i>
+  <div class="part"><b>3. No oxygen</b><span>decay is incomplete</span><span class="zh">没有氧气：分解不完全</span></div><i></i>
+  <div class="part"><b>4. Heat + pressure</b><span>buried deeper and deeper</span><span class="zh">热和压力：埋得越来越深</span></div><i></i>
+  <div class="part out"><b>5. Millions of years</b><span>coal, oil or gas</span><span class="zh">数百万年：煤、石油或天然气</span></div>
+</div><figcaption>The same five steps apply to coal, oil and natural gas.</figcaption></figure>`;
+
+/* --- S3: swamp forest and peat --- */
+function tree(x, top, base) {
+  const fr = [-60, -35, -12, 12, 35, 60].map(d => { const r = d * Math.PI / 180; return `<path class="frond" d="M ${x} ${top} Q ${x + 34 * Math.sin(r)} ${top - 26} ${x + 58 * Math.sin(r)} ${top + 14 - 20 * Math.cos(r)}"/>`; }).join("");
+  return `<rect class="trunk" x="${x - 6}" y="${top}" width="12" height="${base - top}" rx="3"/>${fr}`;
+}
+F.swamp = () => `<figure class="fig"><svg viewBox="0 0 470 330" role="img" aria-label="A swamp forest. Tall tree ferns stand in shallow still water. Dead trunks and leaves have fallen into the water and lie on a thick brown layer of peat, partly decayed plant material, above older rock.">
+  <rect class="sky" x="0" y="0" width="470" height="170"/>
+  <rect class="water" x="0" y="170" width="470" height="60"/>
+  <rect class="peat" x="0" y="230" width="470" height="50"/>
+  <rect class="rock" x="0" y="280" width="470" height="50"/>
+  ${tree(70, 60, 200)}${tree(190, 40, 200)}${tree(320, 70, 200)}${tree(420, 50, 200)}
+  <rect class="trunk" x="110" y="214" width="110" height="11" rx="4" transform="rotate(-6 165 219)"/>
+  <rect class="trunk" x="270" y="218" width="90" height="10" rx="4" transform="rotate(8 315 223)"/>
+  <rect class="trunk" x="20" y="240" width="80" height="8" rx="3" opacity=".55"/><rect class="trunk" x="240" y="256" width="100" height="8" rx="3" opacity=".55"/><rect class="trunk" x="380" y="246" width="70" height="8" rx="3" opacity=".55"/>
+  ${mkr(1, 360, 60)}${mkr(2, 445, 196)}${mkr(3, 230, 205)}${mkr(4, 445, 255)}${mkr(5, 445, 305)}
+</svg><ol class="key"><li><b>Tree ferns</b> and other swamp plants<span class="zh">树蕨和其他沼泽植物</span></li><li><b>Still, waterlogged swamp</b>: very little oxygen<span class="zh">静止、积水的沼泽：氧气很少</span></li><li><b>Dead plants</b> fall into the water<span class="zh">死去的植物倒进水里</span></li><li><b>Peat</b>: partly decayed plant material<span class="zh">泥炭：部分分解的植物物质</span></li><li><b>Older rock</b><span class="zh">更古老的岩石</span></li></ol><figcaption>Swamp forests about 300 million years ago. Low oxygen in the water stopped the plants from fully decaying, so peat built up.</figcaption></figure>`;
+
+/* --- S4: burial of peat --- */
+function col(x, title, layers, note) {
+  let y = 40, s = `<text class="cap b" x="${x + 70}" y="24" text-anchor="middle">${title}</text>`;
+  layers.forEach(([cls, h]) => { s += `<rect class="${cls}" x="${x}" y="${y}" width="140" height="${h}"/>`; y += h; });
+  s += `<rect class="frame" x="${x}" y="40" width="140" height="${y - 40}"/>`;
+  return s + note;
+}
+F.coalstages = () => `<figure class="fig"><svg viewBox="0 0 640 330" role="img" aria-label="Three columns of rock layers. 1: a thick peat layer near the surface under swamp water. 2: the peat is covered by layers of sand and mud and is squashed thinner. 3: many layers lie on top and the peat has become a thin, hard, black seam of coal.">
+  ${col(20, "1. Swamp", [["water", 40], ["peat", 70], ["rock", 130]], "")}
+  ${col(250, "2. Buried", [["water", 20], ["sand", 45], ["mud", 40], ["sand", 40], ["peat", 45], ["rock", 50]], "")}
+  ${col(480, "3. Deep down", [["sand", 40], ["mud", 35], ["sand", 40], ["mud", 35], ["sand", 40], ["coal", 22], ["rock", 28]], "")}
+  ${ar(172, 150, 240, 150)}${ar(402, 150, 470, 150)}
+  ${T(90, 300, "peat forms", "lbl", "middle")}
+  ${T(320, 300, "peat squashed:", "lbl", "middle")}${T(320, 320, "water squeezed out", "lbl", "middle")}
+  ${T(550, 300, "heat + pressure:", "lbl", "middle")}${T(550, 320, "a seam of coal", "lbl b", "middle")}
+</svg><div class="legend"><span><i class="sq peat"></i>peat 泥炭</span><span><i class="sq sand"></i>sand 沙</span><span><i class="sq mud"></i>mud 泥</span><span><i class="sq coal"></i>coal 煤</span></div><p class="zh figzh">1. 沼泽：形成泥炭 · 2. 被掩埋：泥炭被压扁，水被挤出 · 3. 地下深处：热和压力形成煤层</p>
+<figcaption>As more sediment piles on top, the peat is buried deeper, squashed and heated. Over millions of years it becomes coal.</figcaption></figure>`;
+
+F.rank = () => {
+  const rows = [["Peat 泥炭", 55, "soft, brown 柔软，褐色", "peat"], ["Lignite 褐煤", 65, "soft, crumbly 软，易碎", "lignite"], ["Bituminous coal 烟煤", 80, "hard, black 硬，黑色", "bitum"], ["Anthracite 无烟煤", 92, "very hard, shiny 很硬，有光泽", "coal"]];
+  return `<figure class="fig"><div class="rank" role="img" aria-label="Approximate carbon content: peat about 55%, lignite about 65%, bituminous coal about 80%, anthracite about 92%. Carbon increases with deeper burial, more heat and pressure, and more time.">
+  ${rows.map(([n, v, d, c]) => `<div class="rk"><div class="rk-n"><b>${n}</b><span>${d}</span></div><div class="rk-bar"><i class="bg-${c}" style="width:${v}%"></i></div><b class="rk-v">≈${v}%</b></div>`).join("")}
+  <p class="rk-note">↓ deeper, hotter and longer · bars show approximate carbon content (%)<span class="zh">↓ 更深、更热、更久 · 条形表示大约的含碳量（%）</span></p></div>
+  <figcaption>Each stage has more carbon and less water than the one before, so it releases more energy when burned.</figcaption></figure>`;
+};
+
+/* --- S5: oil formation --- */
+function plank(x0, y0, w, h, n, seed) { let s = "", r = seed; for (let i = 0; i < n; i++) { r = (r * 9301 + 49297) % 233280; const x = x0 + (r / 233280) * w; r = (r * 9301 + 49297) % 233280; const y = y0 + (r / 233280) * h; s += `<circle class="plk" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="3"/>`; } return s; }
+function drops(x0, y0, w, h, n, seed) { let s = "", r = seed; for (let i = 0; i < n; i++) { r = (r * 9301 + 49297) % 233280; const x = x0 + (r / 233280) * w; r = (r * 9301 + 49297) % 233280; const y = y0 + (r / 233280) * h; s += `<ellipse class="oil" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" rx="5" ry="3.5"/>`; } return s; }
+F.oilstages = () => `<figure class="fig"><svg viewBox="0 0 660 340" role="img" aria-label="Three stages. 1: tiny plankton in the sea die and sink onto mud on the seabed. 2: the mud with the plankton remains is buried under layers of sediment, with no oxygen, and becomes shale. 3: buried deep and heated, the remains change into droplets of oil in the rock.">
+  <text class="cap b" x="100" y="24" text-anchor="middle">1. Die and sink</text>
+  <rect class="water" x="20" y="40" width="160" height="170"/><rect class="mud" x="20" y="210" width="160" height="50"/><rect class="rock" x="20" y="260" width="160" height="30"/>
+  ${plank(30, 50, 140, 80, 16, 7)}${plank(30, 205, 140, 40, 18, 3)}${ar(60, 120, 60, 190)}${ar(140, 110, 140, 190)}
+  <rect class="frame" x="20" y="40" width="160" height="250"/>
+  <text class="cap b" x="330" y="24" text-anchor="middle">2. Buried</text>
+  <rect class="water" x="250" y="40" width="160" height="40"/><rect class="sand" x="250" y="80" width="160" height="45"/><rect class="mud" x="250" y="125" width="160" height="40"/><rect class="sand" x="250" y="165" width="160" height="45"/><rect class="shale" x="250" y="210" width="160" height="40"/><rect class="rock" x="250" y="250" width="160" height="40"/>
+  ${plank(260, 214, 140, 30, 14, 11)}<rect class="frame" x="250" y="40" width="160" height="250"/>
+  <text class="cap b" x="560" y="24" text-anchor="middle">3. Heated</text>
+  <rect class="sand" x="480" y="40" width="160" height="40"/><rect class="mud" x="480" y="80" width="160" height="35"/><rect class="sand" x="480" y="115" width="160" height="40"/><rect class="mud" x="480" y="155" width="160" height="35"/><rect class="shale" x="480" y="190" width="160" height="40"/><rect class="rock" x="480" y="230" width="160" height="60"/>
+  ${drops(492, 196, 136, 28, 12, 5)}<rect class="frame" x="480" y="40" width="160" height="250"/>
+  ${ar(188, 165, 242, 165)}${ar(418, 165, 472, 165)}
+  ${T(100, 312, "dead plankton settle", "lbl", "middle")}${T(100, 332, "in seabed mud", "lbl", "middle")}
+  ${T(330, 312, "mud becomes shale;", "lbl", "middle")}${T(330, 332, "remains → kerogen", "lbl", "middle")}
+  ${T(560, 312, "heat + pressure:", "lbl", "middle")}${T(560, 332, "kerogen → oil", "lbl b", "middle")}
+</svg><div class="legend"><span><i class="sq plk"></i>plankton remains 浮游生物遗骸</span><span><i class="sq mud"></i>mud 泥</span><span><i class="sq shale"></i>shale 页岩</span><span><i class="sq oil"></i>oil 石油</span></div><p class="zh figzh">1. 死亡并下沉：死去的浮游生物沉入海底的泥里 · 2. 被掩埋：泥变成页岩，遗骸变成干酪根 · 3. 被加热：热和压力把干酪根变成石油</p>
+<figcaption>Oil forms from microscopic sea life buried in mud with no oxygen, then heated over millions of years.</figcaption></figure>`;
+
+/* --- S6: oil and gas windows --- */
+F.window = () => {
+  const y = t => 30 + (t - 20) * 1.4; // 20 °C at surface → 200 °C at y=282
+  const x0 = 120, w = 300;
+  let s = `<svg viewBox="0 0 640 320" role="img" aria-label="Temperature increases with depth. Below about 60 degrees Celsius kerogen is not yet changed. From about 60 to 120 degrees, kerogen mainly forms oil: the oil window. Above about 120 degrees, mainly natural gas forms: the gas window.">`;
+  s += `<rect class="band-cool" x="${x0}" y="${y(20)}" width="${w}" height="${y(60) - y(20)}"/>`;
+  s += `<rect class="band-oil" x="${x0}" y="${y(60)}" width="${w}" height="${y(120) - y(60)}"/>`;
+  s += `<rect class="band-gas" x="${x0}" y="${y(120)}" width="${w}" height="${y(200) - y(120)}"/>`;
+  s += `<rect class="frame" x="${x0}" y="${y(20)}" width="${w}" height="${y(200) - y(20)}"/>`;
+  [20, 40, 60, 80, 100, 120, 140, 160, 180, 200].forEach(t => { s += `<line class="axis" x1="${x0 - 6}" y1="${y(t)}" x2="${x0}" y2="${y(t)}"/><text class="num" x="${x0 - 10}" y="${y(t) + 4}" text-anchor="end">${t}</text>`; });
+  s += `<text class="axis-t" transform="translate(40 ${y(110)}) rotate(-90)" text-anchor="middle">Temperature / °C</text>`;
+  s += ar(470, y(30), 470, y(195), "flow big") + `<text class="cap" transform="translate(492 ${y(110)}) rotate(90)" text-anchor="middle">deeper underground</text>`;
+  s += T(x0 + w / 2, y(40) + 5, "too cool: no change yet", "lbl", "middle");
+  s += T(x0 + w / 2, y(90) - 4, "OIL WINDOW", "lbl b", "middle") + T(x0 + w / 2, y(90) + 16, "kerogen → mainly oil", "lbl", "middle");
+  s += T(x0 + w / 2, y(160) - 4, "GAS WINDOW", "lbl b", "middle") + T(x0 + w / 2, y(160) + 16, "mainly natural gas (methane)", "lbl", "middle");
+  return `<figure class="fig">${s}</svg><p class="zh figzh">Temperature = 温度 · too cool = 太冷，还没有变化 · OIL WINDOW = 生油窗：主要形成石油 · GAS WINDOW = 生气窗：主要形成天然气 · deeper underground = 地下更深处</p><figcaption>The temperatures are approximate. Hot → oil; hotter (deeper) → gas.</figcaption></figure>`;
+};
+
+/* --- S7: an oil and gas trap --- */
+F.trap = () => {
+  const cx = 260, A = 70, wd = 150;
+  const g = x => Math.exp(-(((x - cx) / wd) ** 2));
+  const curve = (base, dir = 1) => { let d = ""; for (let x = 0; x <= 520; x += 10) d += (x ? " L " : "M ") + x + " " + (base - A * g(x)).toFixed(1); return d; };
+  const band = (top, bot) => { let d = curve(top); for (let x = 520; x >= 0; x -= 10) d += " L " + x + " " + (bot - A * g(x)).toFixed(1); return d + " Z"; };
+  const capT = 150, resT = 185, resB = 245, srcB = 280;
+  const crest = resT - A; // top of reservoir at crest
+  const goc = crest + 22, owc = crest + 46;
+  let s = `<svg viewBox="0 0 520 360" role="img" aria-label="Cross-section of rock layers bent up into a dome. Oil and gas move upwards from the source rock at the bottom into a porous reservoir rock. An impermeable cap rock above stops them escaping. At the top of the dome, gas sits above oil, with water below. A drilling rig on the surface drills down into the trap.">`;
+  s += `<defs><clipPath id="resclip"><path d="${band(resT, resB)}"/></clipPath><pattern id="dots" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="1.2" class="dotfill"/></pattern></defs>`;
+  s += `<rect class="sky" x="0" y="0" width="520" height="40"/>`;
+  s += `<rect class="rock" x="0" y="40" width="520" height="320"/>`;
+  s += `<path class="shale" d="${band(capT, resT)}"/>`;
+  s += `<path class="water" d="${band(resT, resB)}"/>`;
+  s += `<g clip-path="url(#resclip)"><rect class="gas" x="0" y="0" width="520" height="${goc}"/><rect class="oil" x="0" y="${goc}" width="520" height="${owc - goc}"/></g>`;
+  s += `<path fill="url(#dots)" d="${band(resT, resB)}"/>`;
+  s += `<path class="src" d="${band(resB + 8, srcB + 8)}"/>`;
+  s += `<line class="ground" x1="0" y1="40" x2="520" y2="40"/>`;
+  s += `<path class="rig" d="M ${cx - 16} 40 L ${cx} 6 L ${cx + 16} 40 M ${cx - 10} 26 L ${cx + 10} 26"/><line class="well" x1="${cx}" y1="40" x2="${cx}" y2="${crest + 14}"/>`;
+  [[110, srcB - 30, 130, resB - 40], [410, srcB - 30, 390, resB - 40], [150, resB - 20, 200, crest + 40], [370, resB - 20, 320, crest + 40]].forEach(([a, b, c, d]) => s += ar(a, b, c, d, "flow mig"));
+  const mk = (n, x, y) => `<circle class="mk" cx="${x}" cy="${y}" r="13"/><text class="mkn" x="${x}" y="${y + 6}" text-anchor="middle">${n}</text>`;
+  s += mk(1, cx + 34, 20) + mk(2, 420, capT - A * g(420) + 17) + mk(3, cx, crest + 11) + mk(4, cx + 70, crest + 36) + mk(5, 470, resT - A * g(470) + 32) + mk(6, 60, srcB - A * g(60) - 8);
+  return `<figure class="fig">${s}</svg><ol class="key"><li><b>Drilling rig</b><span class="zh">钻机</span></li><li><b>Cap rock</b>: impermeable (e.g. shale)<span class="zh">盖层：不可渗透（例如页岩）</span></li><li><b>Natural gas</b>: at the top<span class="zh">天然气：在最上面</span></li><li><b>Oil</b>: below the gas<span class="zh">石油：在天然气下面</span></li><li><b>Reservoir rock</b>: porous (e.g. sandstone), with water below the oil<span class="zh">储集岩：多孔（例如砂岩），石油下面有水</span></li><li><b>Source rock</b> (shale): where oil and gas formed<span class="zh">烃源岩（页岩）：石油和天然气形成的地方</span></li><li class="nk"><span class="mig"></span> oil and gas moving up · 石油和天然气向上移动</li></ol><figcaption>A dome-shaped trap. Oil and gas rise through porous rock until an impermeable cap rock stops them.</figcaption></figure>`;
+};
+
+/* --- S8: summary table --- */
+F.compare = () => `<figure class="fig"><div class="tblwrap"><table class="st">
+  <thead><tr><th></th><th>Coal 煤</th><th>Petroleum (oil) 石油</th><th>Natural gas 天然气</th></tr></thead>
+  <tbody>
+    <tr><th>Formed from<span class="zh">形成自</span></th><td>Plants (trees, ferns)<span class="zh">植物（树、蕨类）</span></td><td>Plankton<span class="zh">浮游生物</span></td><td>Plankton (some from coal)<span class="zh">浮游生物（部分来自煤）</span></td></tr>
+    <tr><th>Where<span class="zh">在哪里</span></th><td>Swamp forests on land<span class="zh">陆地上的沼泽森林</span></td><td>Seabed mud<span class="zh">海底的泥</span></td><td>Seabed mud<span class="zh">海底的泥</span></td></tr>
+    <tr><th>Middle stage<span class="zh">中间阶段</span></th><td>Peat<span class="zh">泥炭</span></td><td>Kerogen<span class="zh">干酪根</span></td><td>Kerogen<span class="zh">干酪根</span></td></tr>
+    <tr><th>Conditions<span class="zh">条件</span></th><td colspan="3">Buried by sediment · little or no oxygen · incomplete decay · heat and pressure · millions of years<span class="zh">被沉积物掩埋 · 氧气很少或没有 · 不完全分解 · 热和压力 · 数百万年</span></td></tr>
+    <tr><th>Found<span class="zh">存在于</span></th><td>Seams between layers of rock<span class="zh">岩层之间的煤层</span></td><td colspan="2">In porous rock, under a cap rock (a trap)<span class="zh">在多孔岩石中，盖层下面（圈闭）</span></td></tr>
+  </tbody></table></div><figcaption>What is the same and what is different.</figcaption></figure>`;
+
+/* ===== Walk-through engine ===== */
+const KEY = "igcse-em-fossil-fuels-zh-walkthrough-v1";
+const $ = (s, el = document) => el.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const LET = "ABCD";
+const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+const reduceMotion = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+const CHECKS = SECTIONS.flatMap(s => s.checks);
+
+let P = { sec: 0, res: {} };           // saved progress
+try { const raw = localStorage.getItem(KEY); if (raw) P = Object.assign(P, JSON.parse(raw)); } catch (e) {}
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(P)); } catch (e) {} };
+
+/* Balanced answer positions: each letter is correct equally often, never 3 times running. */
+const bags = { main: [], back: [] }, hist = { main: [], back: [] };
+function deal(name, n, allowed) {
+  const bag = bags[name], h = hist[name];
+  const ok = t => t < n && (!allowed || allowed.includes(t)) && !(h.length >= 2 && h[h.length - 1] === t && h[h.length - 2] === t);
+  let k = -1;
+  for (let tries = 0; tries < 3 && k < 0; tries++) { for (let j = bag.length - 1; j >= 0; j--) if (ok(bag[j])) { k = j; break; } if (k < 0) bag.unshift(...shuffle([0, 1, 2, 3])); }
+  const t = k >= 0 ? bag.splice(k, 1)[0] : (allowed ? allowed[0] : 0); h.push(t); return t;
+}
+function orderFor(n, correct, t, fixed) {
+  const idx = [...Array(n).keys()];
+  if (fixed) { const desc = idx.slice().reverse(); if (n - 1 - correct === t) return desc; if (correct === t) return idx; return Math.random() < .5 ? idx : desc; }
+  const rest = shuffle(idx.filter(i => i !== correct)); rest.splice(t, 0, correct); return rest;
+}
+function order(q, bag) { return orderFor(q.o.length, q.a, deal(bag, q.o.length, q.fixed ? [q.a, q.o.length - 1 - q.a] : null), q.fixed); }
+
+/* Live state of the current check */
+let R = null;
+const sectionDone = i => SECTIONS[i].checks.every(c => P.res[c.id]);
+const unlocked = () => { let i = 0; while (i < SECTIONS.length && sectionDone(i)) i++; return i; }; // first unfinished section
+
+function renderChips() {
+  const u = unlocked();
+  $("#chips").innerHTML = SECTIONS.map((s, i) => `<button type="button" data-i="${i}" class="${sectionDone(i) ? "done" : ""}" ${P.sec === i ? 'aria-current="step"' : ""} ${i > u ? "disabled title=\"Finish the earlier sections first\"" : ""}><span class="n">${sectionDone(i) ? "✓" : i + 1}</span>${esc(s.title)}</button>`).join("")
+    + `<button type="button" data-i="end" ${P.sec === "end" ? 'aria-current="step"' : ""} ${u < SECTIONS.length ? "disabled" : ""}><span class="n">★</span>Summary</button>`;
+  $("#chips").querySelectorAll("button").forEach(b => b.addEventListener("click", () => goSection(b.dataset.i === "end" ? "end" : +b.dataset.i)));
+  const cur = $("#chips").querySelector('[aria-current="step"]'); if (cur && cur.scrollIntoView) cur.scrollIntoView({ block: "nearest", inline: "nearest" });
+}
+
+function goSection(i) { P.sec = i; save(); R = null; render(); window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" }); }
+
+function fillFigs(html) { return html.replace(/\{\{FIG:(\w+)\}\}/g, (m, k) => F[k] ? F[k]() : ""); }
+
+function render() {
+  renderChips();
+  if (P.sec === "end") return renderEnd();
+  if (P.sec > unlocked()) P.sec = unlocked();
+  const s = SECTIONS[P.sec];
+  const done = s.checks.filter(c => P.res[c.id]);
+  const next = s.checks.find(c => !P.res[c.id]);
+  $("#main").innerHTML = `
+    <section class="card"><div class="eyebrow">Section ${P.sec + 1} of ${SECTIONS.length}</div><h2>${esc(s.title)}${s.tz ? `<span class="zhi">${esc(s.tz)}</span>` : ""}</h2><div class="notes">${fillFigs(s.teach)}</div></section>
+    <section class="card check" id="checkcard">
+      ${done.length ? `<div class="passed">${done.map(c => `<div><span class="tag ${P.res[c.id]}">${P.res[c.id] === "first" ? "First try" : P.res[c.id] === "help" ? "After help" : "Revisit"}</span><span>${esc(c.q)}</span></div>`).join("")}</div>` : ""}
+      <div id="qzone"></div>
+    </section>`;
+  wireFig();
+  if (next) startCheck(next);
+  else finishSection();
+}
+
+function wireFig() {
+  const fig = $("#inhib-fig"); if (!fig) return;
+  const show = { normal: true, comp: false, nonc: false };
+  const apply = () => { fig.querySelectorAll("[data-curve]").forEach(g => g.classList.toggle("off", !show[g.dataset.curve])); fig.querySelectorAll(".tog").forEach(b => { b.classList.toggle("on", show[b.dataset.show]); b.setAttribute("aria-pressed", show[b.dataset.show]); }); };
+  fig.querySelectorAll(".tog[data-show]").forEach(b => b.addEventListener("click", () => { if (b.dataset.show !== "normal") { show[b.dataset.show] = !show[b.dataset.show]; apply(); } }));
+  apply();
+}
+
+function startCheck(c) {
+  R = { c, phase: "main", bi: 0, first: null, order: order(c, "main"), bOrder: null };
+  drawQ(); clearLog();
+}
+
+function curQ() { return R.phase === "back" ? R.c.b[R.bi] : R.c; }
+function curOrder() { return R.phase === "back" ? R.bOrder : R.order; }
+
+function drawQ() {
+  const c = R.c, s = SECTIONS[P.sec], q = curQ(), ord = curOrder();
+  const idx = s.checks.indexOf(c) + 1;
+  let label, cls = "";
+  if (R.phase === "main") label = `Check ${idx} of ${s.checks.length}`;
+  else if (R.phase === "back") { label = `Back-up question ${R.bi + 1} of ${c.b.length}`; cls = "backup"; }
+  else { label = `Second try · Check ${idx}`; cls = "retry"; }
+  const trail = R.phase === "main" ? "" : `<div class="trail"><b class="done">Check</b>${c.b.map((_, k) => `<i>→</i><b class="${R.phase === "back" && R.bi === k ? "on" : (R.phase === "retry" || R.bi > k ? "done" : "")}">Back-up ${k + 1}</b>`).join("")}<i>→</i><b class="${R.phase === "retry" ? "on" : ""}">Second try</b></div>`;
+  $("#qzone").innerHTML = `
+    <div class="qhead"><span class="stage ${cls}">${label}</span></div>${trail}
+    ${q.fig ? F[q.fig]() : ""}
+    <p class="stem"><button type="button" class="say" data-say="${esc(q.q)}" aria-label="Listen to the question">🔊</button> ${esc(q.q)}${q.qz ? `<span class="zh">${esc(q.qz)}</span>` : ""}</p>
+    <div class="opts" id="opts">${ord.map((oi, pos) => `<button type="button" class="opt" data-oi="${oi}" id="opt-${pos}"><span class="k">${LET[pos]}</span><span>${esc(q.o[oi])}${q.oz ? `<span class="zh">${esc(q.oz[oi])}</span>` : ""}</span><span class="mark"></span></button>`).join("")}</div>
+    <div class="log" id="log" aria-live="polite"></div>
+    <div class="actions" id="actions"></div>`;
+  $("#opts").querySelectorAll(".opt").forEach(b => b.addEventListener("click", () => choose(+b.dataset.oi)));
+}
+function clearLog() { const l = $("#log"); if (l) l.innerHTML = ""; }
+function letter(oi) { return LET[curOrder().indexOf(oi)]; }
+function lock(chosen, correct, reveal) {
+  $("#opts").querySelectorAll(".opt").forEach(b => {
+    const oi = +b.dataset.oi; b.disabled = true;
+    if (oi === chosen && chosen === correct) { b.classList.add("right"); b.querySelector(".mark").textContent = "Correct"; }
+    else if (oi === chosen) { b.classList.add("wrong"); b.querySelector(".mark").textContent = "Your answer"; }
+    else if (oi === correct && reveal) { b.classList.add("right"); b.querySelector(".mark").textContent = "Answer"; }
+    else b.classList.add("dim");
+  });
+}
+function msg(kind, title, text, zh) {
+  const d = document.createElement("div"); d.className = "msg " + kind;
+  d.innerHTML = (title ? `<h3>${esc(title)}</h3>` : "") + `<p>${esc(text)}</p>` + (zh ? `<p class="zh">${esc(zh)}</p>` : "");
+  $("#log").appendChild(d);
+}
+function actions(list) {
+  const a = $("#actions"); a.innerHTML = "";
+  list.forEach((it, k) => { const b = document.createElement("button"); b.type = "button"; b.className = "btn" + (it.ghost ? " ghost" : ""); b.textContent = it.label; b.addEventListener("click", it.go); a.appendChild(b); if (k === 0) setTimeout(() => { b.focus({ preventScroll: true }); b.scrollIntoView({ block: "nearest", behavior: reduceMotion ? "auto" : "smooth" }); }, 0); });
+}
+
+function choose(oi) {
+  const c = R.c, q = curQ();
+  if (R.phase === "back") {
+    const ok = oi === q.a; lock(oi, q.a, true);
+    msg(ok ? "good" : "bad", ok ? "Correct" : `The answer is ${letter(q.a)}`, q.x, q.xz);
+    const last = R.bi === c.b.length - 1;
+    actions([{ label: last ? "Try the check question again" : "Next back-up question", go: () => {
+      if (last) { R.phase = "retry"; const was = R.order.indexOf(c.a); if (c.fixed) { const f = R.order.slice().reverse(); if (f.indexOf(c.a) !== was) R.order = f; } else { const t = shuffle([0, 1, 2, 3].filter(p => p !== was))[0]; R.order = orderFor(4, c.a, t, false); } drawQ(); msg("hint", "Second try", "The options are in a new order. Read them carefully.", "选项的顺序变了，请仔细阅读。"); }
+      else { R.bi++; R.bOrder = order(c.b[R.bi], "back"); drawQ(); }
+      focusFirst();
+    } }]);
+    return;
+  }
+  const ok = oi === c.a;
+  if (R.phase === "main") {
+    if (ok) { lock(oi, c.a, false); msg("good", "Correct", c.x, c.xz); record("first"); }
+    else {
+      lock(oi, c.a, false); R.first = oi;
+      msg("bad", `Not quite: ${letter(oi)} isn't right`, c.w[oi] || "That isn't the right answer.", c.wz && c.wz[oi]);
+      msg("hint", "Let's check the basics", `Answer ${c.b.length} short back-up questions. Then try this question again. You can read the notes again first.`, "先回答两道简短的补充问题，然后再试一次这道题。你可以先重新阅读上面的笔记。");
+      actions([{ label: "Start the back-up questions", go: () => { R.phase = "back"; R.bi = 0; R.bOrder = order(c.b[0], "back"); drawQ(); focusFirst(); } }]);
+    }
+    return;
+  }
+  lock(oi, c.a, true);
+  if (ok) { msg("good", "Correct on the second try", c.x, c.xz); record("help"); }
+  else { msg("bad", `Not this time. The answer is ${letter(c.a)}`, (c.w[oi] ? c.w[oi] + " " : "") + c.x, ((c.wz && c.wz[oi]) ? c.wz[oi] + " " : "") + (c.xz || "")); record("miss"); }
+}
+function focusFirst() { const b = $("#opt-0"); if (b) { b.focus({ preventScroll: true }); $("#qzone").scrollIntoView({ block: "start", behavior: reduceMotion ? "auto" : "smooth" }); } }
+
+function record(result) {
+  P.res[R.c.id] = result; save(); renderChips();
+  const s = SECTIONS[P.sec], next = s.checks.find(c => !P.res[c.id]);
+  if (next) actions([{ label: "Next check question", go: () => { render(); setTimeout(() => $("#checkcard").scrollIntoView({ block: "start", behavior: reduceMotion ? "auto" : "smooth" }), 0); } }]);
+  else actions(sectionNav());
+}
+function sectionNav() {
+  const last = P.sec === SECTIONS.length - 1;
+  return [{ label: last ? "See your summary" : `Next section: ${SECTIONS[P.sec + 1].title}`, go: () => goSection(last ? "end" : P.sec + 1) }];
+}
+function finishSection() {
+  const s = SECTIONS[P.sec];
+  $("#qzone").innerHTML = `<p>You've finished this section's checks.</p><div class="actions" id="actions"></div>`;
+  const a = sectionNav().concat([{ label: "Redo this section's questions", ghost: true, go: () => { s.checks.forEach(c => delete P.res[c.id]); save(); render(); } }]);
+  const box = $("#actions");
+  a.forEach(it => { const b = document.createElement("button"); b.type = "button"; b.className = "btn" + (it.ghost ? " ghost" : ""); b.textContent = it.label; b.addEventListener("click", it.go); box.appendChild(b); });
+}
+
+function renderEnd() {
+  const n = CHECKS.length, c = { first: 0, help: 0, miss: 0 };
+  CHECKS.forEach(k => { if (P.res[k.id]) c[P.res[k.id]]++; });
+  const pts = c.first + c.help * 0.5;
+  const fmt = v => (v % 1 ? Math.floor(v) + "½" : String(v));
+  $("#main").innerHTML = `
+    <section class="card"><div class="eyebrow">Summary</div>
+      <div class="big">${fmt(pts)}<small> / ${n} checks</small></div>
+      <p>${c.first} right first time · ${c.help} right after the back-up questions · ${c.miss} to revisit</p>
+      <div class="secs">${SECTIONS.map((s, i) => { const r = s.checks.map(k => P.res[k.id]); const worst = r.includes("miss") ? "miss" : r.includes("help") ? "help" : "first";
+        return `<div class="row"><span><span class="tag ${worst}">${worst === "first" ? "Secure" : worst === "help" ? "Getting there" : "Revisit"}</span> ${esc(s.title)}</span><button type="button" class="linkbtn" data-go="${i}">Go to section</button></div>`; }).join("")}</div>
+    </section>
+    <section class="card"><h2>Key points</h2><ol class="keys">${SUMMARY.map(t => `<li>${esc(t[0])}<span class="zh">${esc(t[1])}</span></li>`).join("")}</ol>
+      <div class="actions"><button type="button" class="btn ghost" id="restart">Start again from the beginning</button><span id="confirm" class="note"></span></div></section>`;
+  $("#main").querySelectorAll("[data-go]").forEach(b => b.addEventListener("click", () => goSection(+b.dataset.go)));
+  let armed = false;
+  $("#restart").addEventListener("click", () => {
+    if (!armed) { armed = true; $("#confirm").textContent = "This clears your answers. Click again to confirm."; setTimeout(() => { armed = false; const el = $("#confirm"); if (el) el.textContent = ""; }, 5000); return; }
+    P = { sec: 0, res: {} }; save(); goSection(0);
+  });
+}
+
+document.addEventListener("keydown", e => {
+  if (e.metaKey || e.ctrlKey || e.altKey || !R) return;
+  const i = "ABCD".indexOf(e.key.toUpperCase()); const j = i >= 0 ? i : "1234".indexOf(e.key);
+  if (j >= 0 && e.key.length === 1) { const b = $("#opt-" + j); if (b && !b.disabled) { e.preventDefault(); b.click(); } }
+});
+
+render();
+
+/* ===== Bilingual helpers: Chinese toggle and read-aloud ===== */
+(function () {
+  const ZKEY = "igcse-em-ff-zh-show";
+  let show = true; try { show = localStorage.getItem(ZKEY) !== "0"; } catch (e) {}
+  const btn = document.getElementById("zhtog");
+  const apply = () => { document.body.classList.toggle("no-zh", !show); btn.setAttribute("aria-pressed", show); btn.innerHTML = `中文 Chinese: <b>${show ? "ON" : "OFF"}</b>`; };
+  btn.addEventListener("click", () => { show = !show; try { localStorage.setItem(ZKEY, show ? "1" : "0"); } catch (e) {} apply(); });
+  apply();
+
+  const synth = window.speechSynthesis;
+  let voice = null;
+  const pick = () => { if (!synth) return; const v = synth.getVoices(); voice = v.find(x => /en-GB/i.test(x.lang)) || v.find(x => /^en/i.test(x.lang)) || null; };
+  if (synth) { pick(); synth.onvoiceschanged = pick; }
+  function speak(text, onend) {
+    if (!synth) { alertNoSpeech(); return; }
+    synth.cancel();
+    const u = new SpeechSynthesisUtterance(text); u.lang = "en-GB"; u.rate = 0.85; if (voice) u.voice = voice;
+    if (onend) { u.onend = onend; u.onerror = onend; }
+    synth.speak(u);
+  }
+  function alertNoSpeech() { const n = document.createElement("p"); n.className = "note"; n.textContent = "Read-aloud is not available in this browser."; document.querySelector("header").appendChild(n); }
+  document.addEventListener("click", e => {
+    const s = e.target.closest("[data-say]");
+    if (s) { e.preventDefault(); e.stopPropagation(); speak(s.dataset.say); return; }
+    const l = e.target.closest("[data-listen]");
+    if (l) {
+      if (l.classList.contains("on")) { synth && synth.cancel(); l.classList.remove("on"); l.textContent = "🔊 Listen (English)"; return; }
+      const notes = l.closest(".notes"); const c = notes.cloneNode(true);
+      c.querySelectorAll(".zh, .zhi, .zhc, .fig, .gloss, button, .model").forEach(x => x.remove());
+      const text = c.textContent.replace(/\s+/g, " ").replace(/→/g, ", then ").trim();
+      l.classList.add("on"); l.textContent = "■ Stop";
+      speak(text, () => { l.classList.remove("on"); l.textContent = "🔊 Listen (English)"; });
+    }
+  }, true);
+})();
+
+</script>
+</body>
+</html>
